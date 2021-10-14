@@ -1,0 +1,92 @@
+﻿@model IEnumerable<AssignmentOne_CYCC.Models.Students>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@using (Html.BeginForm(null, null, FormMethod.Get, new { id = "letter-form" }))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GuardianName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td data-href="/Students/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.FName)
+                    </td>
+                    <td data-href="/Students/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.LName)
+                    </td>
+                    <td data-href="/Students/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </td>
+                    <td data-href="/Students/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td data-href="/Students/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td data-href="/Students/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.GuardianName)
+                    </td>
+                    <td data-href="/Students/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td data-href="/Students/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><img src="~/img/edit.png" alt="Edit" class="row-icon"/></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><img src="~/img/del.png" alt="Delete" class="row-icon"/></a>
+                        <a href="~/Invoices/Create/@item.Id.ToString()"><img src="~/img/addInvoice.png" alt="Create Invoice" class="row-icon"/></a>
+                        @*<a asp-controller="Invoice" asp-action="GenerateInvoice" asp-route="@item.Id">Generate Invoice</a>*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('*[data-href]').on('click', function () {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
+}

@@ -1,0 +1,77 @@
+﻿@model AssignmentOne_CYCC.Models.Lesson
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Lesson</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Students)
+        </dt>
+        <dd class = "col-sm-10">
+            <a asp-controller="Students" asp-action="Details" asp-route-id="@Model.Students.Id" target="_blank">@Html.DisplayFor(model => model.Students.FullName)</a>
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Instrument)
+        </dt>
+        <dd class = "col-sm-10">
+            <a asp-controller="Instruments" asp-action="Details" asp-route-id="@Model.Instrument.Id" target="_blank">@Html.DisplayFor(model => model.Instrument.Name)</a>
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tutor)
+        </dt>
+        <dd class = "col-sm-10">
+            <a asp-controller="Tutors" asp-action="Details" asp-route-id="@Model.Tutor.Id" target="_blank">@Html.DisplayFor(model => model.Tutor.fullName)</a>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Invoice)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Invoice != null) {
+            <a asp-controller="Invoices" asp-action="Details" asp-route-id="@Model.Invoice.Id" target="_blank">@Html.DisplayFor(model => model.Invoice.ReferenceNo)</a>
+			} else {
+            <a asp-controller="Invoices" asp-action="Create" asp-route-id="@Model.StudentId" target="_self">New Invoice for this Student</a>
+			}
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Duration.DurationCost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.term)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.term)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LessonTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LessonTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Paid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Paid)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id"><img src="~/img/edit.png" alt="Edit" class="click-icon" /></a>
+    <a asp-action="Delete" asp-route-id="@Model.Id"><img src="~/img/del.png" alt="Delete" class="click-icon" /></a>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,123 @@
+﻿@model IEnumerable<AssignmentOne_CYCC.Models.Lesson>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@* NOTE: Code for Multi select is commented, retained for possible future use.*@
+
+<h1>Index</h1>
+
+<p>
+</p>
+@using (Html.BeginForm(null, null, FormMethod.Get, new { id = "letter-form" })) {
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td colspan="10">
+                    <a asp-action="Create">Create New</a>@* |
+                        <input type="button" name="get-latter" value="Generate Letter" id="get-letter-submit" />
+                        <p class="text-danger" id="get-letter-button-text-error"></p>*@
+                </td>
+            </tr>
+            <tr>
+                @*<th>
+                        <input type="checkbox" name="select_all" id="select_all" />
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Students)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Instrument)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tutor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.term)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LessonTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Paid)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    @*<td>
+                            <input type="checkbox" name="Selected" value="@item.Id" class="select-for-letter" />
+                        </td>*@
+                    <td data-href="/Lessons/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Students.FullName)
+                    </td>
+                    <td data-href="/Lessons/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Instrument.Name)
+                    </td>
+                    <td data-href="/Lessons/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Tutor.fullName)
+                    </td>
+                    <td data-href="/Lessons/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Duration.DurationCost)
+                    </td>
+                    <td data-href="/Lessons/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.term)
+                    </td>
+                    <td data-href="/Lessons/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.year)
+                    </td>
+                    <td data-href="/Lessons/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.LessonTime)
+                    </td>
+                    <td data-href="/Lessons/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Paid)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><img src="img/edit.png" alt="Edit" class="row-icon" /></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><img src="img/del.png" alt="Delete" class="row-icon" /></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function ($) {
+            $('*[data-href]').on('click', function () {
+                window.location = $(this).data("href");
+            });
+             @*$('#select_all').change(function () {
+                var checkboxes = $(this).closest('form').find('.select-for-letter:checkbox');
+                checkboxes.prop('checked', $(this).is(':checked'));
+            });
+            $('#get-letter-submit').click(function (e) {
+                e.preventDefault();
+                var form = $("#letter-form").serializeArray();
+                var selected = [];
+                form.forEach(element => {
+                    if (element.name != undefined && element.name == "Selected") {
+                        selected.push(element.value);
+                    @\*$.get('@Url.Action("getletter", "Letter")', data = form);*\@
+                    }
+                    if (selected.length > 0)
+                        location.href = "@Url.Action("Index", "Letter")" + "?id=" + selected.join(",");
+                });
+                $('#get-letter-button-text-error').text("Please select more than one lesson.");
+            });*@
+        });
+
+    </script>
+}

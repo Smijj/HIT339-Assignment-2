@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AssignmentOne_CYCC.Models.Instrument>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Family)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td data-href="/Instruments/Details/@item.Id">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td data-href="/Instruments/Details/@item.Id">
+                    @Html.DisplayFor(modelItem => item.Family)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><img src="~/img/edit.png" alt="Edit" class="row-icon" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><img src="~/img/del.png" alt="Delete" class="row-icon" /></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('*[data-href]').on('click', function () {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
+}

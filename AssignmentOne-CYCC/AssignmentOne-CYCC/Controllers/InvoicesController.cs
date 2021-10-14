@@ -1,0 +1,410 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using AssignmentOne_CYCC.Data;
+using AssignmentOne_CYCC.Models;
+using Microsoft.EntityFrameworkCore.Query;
+
+
+namespace AssignmentOne_CYCC.Controllers
+{
+    public class InvoicesController : Controller
+    {
+        private readonly AssignmentOne_CYCCContext _context;
+
+        public InvoicesController(AssignmentOne_CYCCContext context)
+        {
+            _context = context;
+        }
+        // Custom Function.
+        /// <summary>
+        /// Populates 'Invoice->Lesson()->Duration' references.
+        /// Also returns the Invoice model entity for optional use.
+        /// </summary>
+        /// <param name="Id">(optional) Id of Invoice to populate/return. Populates/Returns all when omitted.</param>
+        /// <returns>IIncludableQueryable<Invoice, ICollection<Lesson>> - Invoice model with lesson and duration included.</returns>
+        private IIncludableQueryable<Invoice, ICollection<Lesson>> IncludeInvoiceAndCostData(int? Id = null)
+        {
+            var modelValue = _context.Invoice.Include(m => m.Student).Include(m => m.Lesson);
+            // Only set values used (if Id is supplied).
+            if (Id != null) modelValue.Where(m => m.Id == Id);
+
+            foreach (var m in modelValue)
+            {
+                foreach (var l in m.Lesson)
+                {
+                    l.Duration = _context.Duration.Where(d => d.Id == l.DurationId).FirstOrDefault();
+                }
+            }
+            return modelValue;
+        }
+
+        // GET: Invoices
+        /// <summary>
+        /// Renders the Index page.
+        /// (optional) Takes either a 'success' or 'error' message from GET to be displayed.
+        /// </summary>
+        /// <returns>ViewResult - Invoice.Index</returns>
+        public async Task<IActionResult> Index()
+        {
+            
+            ViewBag.success = Request.Query["success"].ToString();
+            ViewBag.error = Request.Query["error"].ToString();
+
+            IncludeInvoiceAndCostData();
+
+            return View(await _context.Invoice.Include(m => m.Student).Include(m => m.Lesson).ToListAsync());
+        }
+
+
+        // GET: Invoices/Details/5
+        /// <summary>
+        /// Returns the Details page.
+        /// (optional) Takes either a 'success' or 'error' message from GET to be displayed.
+        /// </summary>
+        /// <param name="id">Id of Invoice to display.</param>
+        /// <returns>ViewResult - Invoice.Details | NotFoundResult</returns>
+        public async Task<IActionResult> Details(int? id)
+        {
+            // Checks if Id is set.
+            if (id == null)
+            {
+                return NotFound();
+            }
+            // Gets success/error message if exists.
+            ViewBag.success = Request.Query["success"].ToString();
+            ViewBag.error = Request.Query["error"].ToString();
+
+            // Try to get Invoice of Id == id.
+            IncludeInvoiceAndCostData(id);
+			/*var modelValue = _context.Invoice.Include(m => m.Student).Include(m => m.Lesson).Where(m => m.Id == id);
+
+			foreach (var m in modelValue) {
+				foreach (var l in m.Lesson) {
+					l.Duration = _context.Duration.Where(d => d.Id == l.DurationId).FirstOrDefault();
+				}
+			}*/
+
+            // Include Students into invoice model instance.
+			var invoice = await _context.Invoice
+                .Include(m => m.Student)
+                //.Include(m => m.Lesson)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            // If model returns NULL, no Invoice of Id == id exists, return NotFoundResult.
+            if (invoice == null)
+            {
+                return NotFound();
+            }
+            // Return the Details page, passing the invoice model data.
+            return View(invoice);
+        }
+
+        // GET: Invoices/Create
+        /// <summary>
+        /// Returns the Create page.
+        /// (optional GET) Takes Id of student to 'lock-in', preselecting and setting the field to 'readonly'.
+        /// </summary>
+        /// <param name="id">(optional GET parameter) Id of student to 'Lock-in'.</param>
+        /// <returns>ViewResult - Invoice.Details</returns>
+        public async Task<IActionResult> Create(int? id = null)
+        {
+            // If a valid student Id is passed to the create page, tell view to lock that student in.
+            // Else render the page as normal.
+            if (id != null && id >= 0 && _context.Students.Any(ag => ag.Id == id))
+            {
+                ViewBag.LockStudent = id;
+                ViewBag.LockStudentName = _context.Students.Find(id).FullName;
+            }
+            else
+            {
+                ViewBag.LockStudent = -1;
+                ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
+            }
+			// Get default Information from last record.
+			ViewBag.Comment = "";
+			ViewBag.Signature = "";
+			ViewBag.Bank = "";
+			ViewBag.AccountName = "";
+			ViewBag.AccountNo = "";
+			ViewBag.BSB = "";
+			ViewBag.Term = "";
+			ViewBag.Year = "";
+			ViewBag.TermStartDate = "";
+			ViewBag.PaymentFinalDate = "";
+
+			if (_context.Invoice.Count() > 0)
+            {
+                ViewBag.Comment = _context.Invoice.OrderBy(ag => ag.Id).Last().Comment;
+                ViewBag.Signature = _context.Invoice.OrderBy(ag => ag.Id).Last().Signature;
+                ViewBag.Bank = _context.Invoice.OrderBy(ag => ag.Id).Last().Bank;
+                ViewBag.AccountName = _context.Invoice.OrderBy(ag => ag.Id).Last().AccountName;
+                ViewBag.AccountNo = _context.Invoice.OrderBy(ag => ag.Id).Last().AccountNo;
+                ViewBag.BSB = _context.Invoice.OrderBy(ag => ag.Id).Last().BSB;
+                ViewBag.Term = _context.Invoice.OrderBy(ag => ag.Id).Last().Term;
+                ViewBag.Year = _context.Invoice.OrderBy(ag => ag.Id).Last().Year;
+                ViewBag.TermStartDate = _context.Invoice.OrderBy(ag => ag.Id).Last().TermStartDate.ToString("yyyy-MM-dd");
+                ViewBag.PaymentFinalDate = _context.Invoice.OrderBy(ag => ag.Id).Last().PaymentFinalDate.ToString("yyyy-MM-dd");
+            }
+
+
+
+            // Provide data on lessons for View.
+            ViewBag.Lessons = new SelectList(_context.Lesson, "id", "LessonTime", _context.Invoice);
+			// If id is set, get student information, and check if the student id is valid (returning NotFoundResult if invalid).
+			if (id != null) {
+				var Student = await _context.Students
+					.FirstOrDefaultAsync(m => m.Id == id);
+
+				if (Student == null) {
+					return NotFound();
+				}
+			}
+			return View();
+
+        }
+
+        // POST: Invoices/Create
+        /// <summary>
+        /// POST Handler for the Create page.
+        /// Handles Form data, validation and saving to the database.
+        /// </summary>
+        /// <param name="invoice">Form Data to be bound to model.</param>
+        /// <returns>ViewResult - Invoice->Create (fail) | ViewResult - Invoice->GenerateInvoice (success)</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("StudentId,Comment,Signature,Bank,AccountName,AccountNo,BSB,Term,Year,Semester,TermStartDate,PaymentFinalDate")] Invoice invoice)
+        {
+            // Check if any data is provided, else redirect back to form page.
+            if (invoice == null) return RedirectToAction(nameof(Create));
+            // Check if Student.Id exists, else return an error message.
+			if (_context.Students.Any(ag => ag.Id == invoice.StudentId)) {
+
+                // Get all lessons linked to this Student that: Have NOT been paid AND are NOT already associated with another Invoice.
+                IEnumerable<Lesson> lessonQuery =
+                    from lesson in _context.Lesson
+                    where lesson.StudentId == invoice.StudentId && lesson.Paid == false && lesson.InvoiceId == null
+					select lesson;
+
+                // Check if there is no lessons unpaid, not already linked, if there is none return error.
+                if (!lessonQuery.Any()) {
+                    ModelState.AddModelError("EmptyLessonError", "There are currently no outstanding lessons not already invoiced for this student.");
+			        ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
+			        return View(invoice);
+				}
+                // Covert to array.
+                invoice.Lesson = lessonQuery.ToArray();
+
+			} else {
+                ModelState.AddModelError("StudentId", "The Student provided does not exist. Please select a valid option.");
+                ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
+                return View(invoice);
+			}
+
+            if (ModelState.IsValid)
+            {
+                _context.Add(invoice);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(GenerateInvoice), new { id = invoice.Id });  // Redirect to GenerateInvoice page of same Invoice.
+            }
+            ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");       // Get data for drop-down.
+            return View(invoice);
+        }
+
+        // GET: Invoices/Edit/5
+        /// <summary>
+        /// Returns Invoice->Edit page.
+        /// (Required) Takes Id of Invoice.
+        /// </summary>
+        /// <param name="id">(Required) id of Invoice to edit.</param>
+        /// <returns>ViewResult - Invoice->Edit</returns>
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var invoice = await _context.Invoice.FindAsync(id);
+            if (invoice == null)
+            {
+                return NotFound();
+            }
+            return View(invoice);
+        }
+
+        // POST: Invoices/Edit/5
+        /// <summary>
+        /// POST Handler for the Edit page.
+        /// Handles Form data, validation and updating the database.
+        /// </summary>
+        /// <param name="id">Id of the Invoice to edit.</param>
+        /// <param name="invoice">Form Data to be bound to model.</param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Comment,Signature,Bank,AccountName,AccountNo,BSB,Term,Year,Semester,TermStartDate,PaymentFinalDate")] Invoice invoice)
+        {
+            if (id != invoice.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(invoice);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!InvoiceExists(invoice.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));     // Redirect to Invoice->Index on success.
+            }
+            return View(invoice);
+        }
+
+        // GET: Invoices/Delete/5
+        /// <summary>
+        /// Returns  Invoice->Delete page.
+        /// </summary>
+        /// <param name="id">(required) Id of Invoice to delete</param>
+        /// <returns>ViewResult - Invoice->Delete</returns>
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var invoice = await _context.Invoice
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (invoice == null)
+            {
+                return NotFound();
+            }
+
+            return View(invoice);
+        }
+
+        // POST: Invoices/Delete/5
+        /// <summary>
+        /// POST Handler for Invoice-Delete.
+        /// Handles Form data, validation and deleting from the database.
+        /// </summary>
+        /// <param name="id">(Required) Invoice Id to delete.</param>
+        /// <returns></returns>
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var invoice = await _context.Invoice.Include(m => m.Lesson).FirstOrDefaultAsync(m => m.Id == id);
+            // Clear reference in lesson model, severing the relationship so that the invoice can be deleted. 
+            // Lesson.Paid is set to false, as a lesson cannot be paid if there is no invoice associated with it.
+			foreach (Lesson lesson in invoice.Lesson) {
+                lesson.InvoiceId = null;
+                lesson.Paid = false;
+			}
+            _context.Invoice.Remove(invoice);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool InvoiceExists(int id)
+        {
+            return _context.Invoice.Any(e => e.Id == id);
+        }
+        /// <summary>
+        /// Returns filled HTML template.
+        /// </summary>
+        /// <param name="id">(Required) Invoice Id</param>
+        /// <returns>ViewResult - Invoice->GenerateInvoice | NotFoundResult</returns>
+        public async Task<IActionResult> GenerateInvoice(int id) {
+
+            
+            var modelValue = IncludeInvoiceAndCostData(id);
+            var invoice = await _context.Invoice.FirstOrDefaultAsync(m => m.Id == id);
+            if (invoice == null)
+                return NotFound();
+			Students student = _context.Students.Find(invoice.StudentId);
+            if (invoice == null)
+            {
+                return NotFound();
+            }
+
+            return View(invoice);
+        }
+        /// <summary>
+        /// Modifies the Lesson.Paid variable for an entire Invoice then returns the user back to the page they were on.
+        /// </summary>
+        /// <returns>ViewResult - Invoice->Details | Invoice->Index</returns>
+        [HttpPost]
+        public async Task<IActionResult> PayInvoice() {
+            // Get variables from hidden form elements.
+            int id;
+            bool pay = Request.Form["pay"] == "un-pay" ? false : true;
+            bool ToDetails = Request.Form["Details"] == "Details" ? true : false;
+            // Check if Id is valid.
+            if (int.TryParse(Request.Form["Id"], out id)) {
+                // Get Invoice model instance of id.
+                Invoice invoice = await _context.Invoice.Include(m => m.Lesson).FirstOrDefaultAsync(m => m.Id == id);
+				// Set each lesson.Paid to true.
+                foreach (var item in invoice.Lesson) {
+                    item.Paid = pay;
+				}
+                _context.SaveChanges();
+                // Redirect back to last page, with success message.
+                if (ToDetails)
+                    return Redirect(nameof(Details) + "/" + id + "?Success=Invoice " + (pay?"":"un-") + "Paid successfully.");
+                return RedirectToAction(nameof(Index), new { Success = "Invoice Paid successfully." });
+			} else {
+                // Redirect back to last page, with error message.
+                if (ToDetails)
+                    return Redirect(nameof(Details) + "/" + id + "?error=Invalid Invoice Id.");
+                return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id."});
+			}
+		}
+        /// <summary>
+        /// Modifies the Lesson.Paid variable for a single Lesson then returns the user back to the page they were on.
+        /// </summary>
+        /// <returns>ViewResult - Invoice->Details | Invoice->Index</returns>
+        public async Task<IActionResult> PayLesson() {
+            // Get variables from hidden form elements.
+            int id;
+            int invId;
+            bool pay = Request.Form["pay"] == "un-pay" ? false : true;
+            // Check if Id is valid.
+            if (int.TryParse(Request.Form["InvoiceId"], out invId)) {
+                // Get Invoice model instance of id.
+                if (int.TryParse(Request.Form["Id"], out id)) {
+                    // Get Invoice model instance of id.
+                    Lesson lesson = await _context.Lesson.FirstOrDefaultAsync(m => m.Id == id);
+                    // Set lesson.Paid to true.
+                    lesson.Paid = pay;
+                    _context.SaveChanges();
+                    // Redirect back to last page, with success message.
+                    return Redirect(nameof(Details) + "/" + invId + "?Success=Lesson Un-Paid successfully.");
+                } else {
+                    // Redirect back to last page, with error message.
+                    return Redirect(nameof(Details) + "/" + invId + "?error=Invalid Lesson Id.");
+                }
+            } else {
+                // Redirect back to last page, with error message.
+                return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
+            }
+
+        }
+    }
+}
