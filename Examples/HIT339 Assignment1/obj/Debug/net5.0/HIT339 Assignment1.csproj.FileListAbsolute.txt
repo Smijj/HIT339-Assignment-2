@@ -1,0 +1,354 @@
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\appsettings.Development.json
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\appsettings.json
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.exe
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.deps.json
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.runtimeconfig.json
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.runtimeconfig.dev.json
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ref\HIT339 Assignment1.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.pdb
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.Views.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.Views.pdb
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Humanizer.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Newtonsoft.Json.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.AttributedModel.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.Convention.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.Hosting.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.Runtime.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.TypedParts.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Runtime.Caching.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.GeneratedMSBuildEditorConfig.editorconfig
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.AssemblyInfoInputs.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.AssemblyInfo.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.csproj.CoreCompileInputs.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.MvcApplicationPartsAssemblyInfo.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorAssemblyInfo.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorAssemblyInfo.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\staticwebassets\HIT339 Assignment1.StaticWebAssets.Manifest.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\staticwebassets\HIT339 Assignment1.StaticWebAssets.xml
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\scopedcss\bundle\HIT339 Assignment1.styles.css
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.TagHelpers.input.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.TagHelpers.output.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorCoreGenerate.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Create.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Delete.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Details.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Edit.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Index.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Create.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Delete.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Details.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Edit.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Index.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Create.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Delete.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Details.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Edit.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Index.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Create.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Delete.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Details.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Edit.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Index.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Create.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Delete.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Details.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Edit.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Index.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Create.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Delete.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Details.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Edit.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Index.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorTargetAssemblyInfo.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorTargetAssemblyInfo.cs
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.Views.pdb
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.csproj.CopyComplete
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\ref\HIT339 Assignment1.dll
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.pdb
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.genruntimeconfig.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.csproj.AssemblyReference.cache
+F:\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\FinalLetter.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\appsettings.json
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.exe
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.deps.json
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.runtimeconfig.json
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.runtimeconfig.dev.json
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ref\HIT339 Assignment1.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.pdb
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.Views.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\HIT339 Assignment1.Views.pdb
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Humanizer.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.AttributedModel.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.Convention.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.Hosting.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.Runtime.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Composition.TypedParts.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.csproj.AssemblyReference.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.AssemblyInfoInputs.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.AssemblyInfo.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.csproj.CoreCompileInputs.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorAssemblyInfo.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorAssemblyInfo.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\staticwebassets\HIT339 Assignment1.StaticWebAssets.Manifest.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\staticwebassets\HIT339 Assignment1.StaticWebAssets.xml
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\scopedcss\bundle\HIT339 Assignment1.styles.css
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.TagHelpers.input.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.TagHelpers.output.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorCoreGenerate.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Create.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Delete.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Details.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Edit.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Durations\Index.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Create.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Delete.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Details.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Edit.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Instruments\Index.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Create.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Delete.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Details.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Edit.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Lessons\Index.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Create.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Delete.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Details.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Edit.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\FinalLetter.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Letters\Index.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Create.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Delete.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Details.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Edit.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Students\Index.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Create.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Delete.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Details.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Edit.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\Tutors\Index.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorTargetAssemblyInfo.cache
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.RazorTargetAssemblyInfo.cs
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.Views.pdb
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.csproj.CopyComplete
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\ref\HIT339 Assignment1.dll
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.pdb
+C:\Users\slyer\OneDrive\__University\Year 3\Semester 2\HIT339 Distributed Development\Assessments\Assignment 1 ~ Due 1-10-21\HIT339 Assignment1\obj\Debug\net5.0\HIT339 Assignment1.genruntimeconfig.cache

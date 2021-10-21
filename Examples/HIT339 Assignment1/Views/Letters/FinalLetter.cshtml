@@ -1,0 +1,63 @@
+﻿@model HIT339_Assignment1.Models.Letter
+
+@{
+    ViewData["Title"] = "Final Letter";
+}
+
+
+<h4>Dear @ViewBag.letter.student.FirstName,</h4>
+
+<p>@ViewBag.letter.comment</p>
+
+<p>
+    Welcome to all existing students and new students. Term @((int)ViewBag.letter.currentTerm + 1) will commence @ViewBag.letter.termStartDate.
+    Please ensure your payment is finalised by <payment_final> If a student is no longer attending lessons, please email the CYCM to be 
+    removed off the email list.
+</p>
+
+<p>
+    If paying by Bank Transfer- EFT, please forward a copy of your payment to the office, to follow up and allocate to the student.
+</p>
+
+<h6>Payment Details</h6>
+<p>
+    Ref#: @ViewBag.letter.Id  <br />
+    Student: @ViewBag.letter.student.FullName
+</p>
+<h6>Unpaid Lessons:</h6>
+<ul>
+    @foreach (Lesson lesson in ViewBag.LessonQuery) {
+        <li>
+            Lesson ID: @lesson.Id,  <br />
+            Lesson Date: @lesson.dateTime,  <br />
+            Student: @lesson.student.FullName   <br />
+            Cost: $@lesson.duration.lessonCost
+        </li>
+    }
+</ul>
+<p>Total Cost: $@ViewBag.totalCost</p>
+
+
+
+<p><b>Please follow the <a href="#">link</a> to make payment for Term @((int)ViewBag.letter.currentTerm + 1) @ViewBag.letter.currentYear.</b></p>
+<p><b>Apply for your Sport Vouchers for Semester @ViewBag.letter.currentSemester, @ViewBag.letter.currentYear, please visit <a href="http://www.sportvoucher.nt.gov.au">www.sportvoucher.nt.gov.au</a>, 
+    as schools are no longer providing stufents with a sports voucher.</b></p>
+
+<p><b>Alternatively pay via Bank Transfer - EFT - CDU bank details, delete old bank details:</b></p>
+<h6>New Bank Details:</h6>
+
+<p><b>
+    Bank: @ViewBag.letter.bankName  <br />
+    Account Name: @ViewBag.letter.accountName  <br />
+    BSB Number: @ViewBag.letter.bsb    <br />
+    Account Number: @ViewBag.letter.accountNumber    <br />
+    Reference: @ViewBag.letter.Reference
+</b></p>
+
+<p><i>The CYCM is committed to providing students with quality lessons in a positive learning environment.</i></p>
+<p>Regards</p>
+<p>CDU</p>
+
+
+<a asp-action="Index">Back to List</a> |
+<a asp-action="SetPaid" asp-route-id="@ViewBag.letter.StudentId">Set Paid</a>

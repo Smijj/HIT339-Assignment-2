@@ -1,0 +1,60 @@
+﻿@model HIT339_Assignment1.Models.Lesson
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Lesson</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Term)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Term)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dateTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dateTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isPaid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isPaid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.student)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.student.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.instrument)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.instrument.InstrumentName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tutor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tutor.TutorName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.duration.DisplayInfo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

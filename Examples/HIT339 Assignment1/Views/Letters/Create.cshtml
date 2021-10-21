@@ -1,0 +1,120 @@
+﻿@model HIT339_Assignment1.Models.Letter
+
+@{
+    ViewData["Title"] = "Create Invoice";
+}
+
+<h1>Create</h1>
+
+<h4>Invoice</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <section class="col">
+                <h2>Identity and Contact</h2>
+                <div class="form-group">
+                    <label asp-for="StudentId" class="control-label"></label>
+                    <select asp-for="StudentId" class="form-control" asp-items="ViewBag.StudentId"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="comment" class="control-label"></label>
+                    <input asp-for="comment" class="form-control" />
+                    <span asp-validation-for="comment" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="email" class="control-label"></label>
+                    <input asp-for="email" class="form-control" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+            </section>
+
+            <section class="col">
+                <h4>Unpaid Lessons</h4>
+                @* Checks if there is any unpaid lessons and shows a list of the unpaid lessons if there are any. *@
+                @if(ViewBag.isUnpaidLessons) {
+                    <ul>
+                        @foreach (Lesson lesson in ViewBag.lessonQuery) {
+                            <li>
+                                Lesson ID: @lesson.Id,  <br />  
+                                Lesson Date: @lesson.dateTime,  <br /> 
+                                Student: @lesson.student.FullName  <br />
+                                Cost: $@lesson.duration.lessonCost
+                            </li>
+                        }
+                    </ul>
+                    <p>Total Cost: $@ViewBag.totalCost</p>
+                } else {
+                    <p>No Outstanding Lessons</p>
+                }
+            </section>
+
+            <section class="col">
+                <h2>Bank Details</h2>
+                <div class="form-group">
+                    <label asp-for="bankName" class="control-label"></label>
+                    <input asp-for="bankName" class="form-control" />
+                    <span asp-validation-for="bankName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="accountName" class="control-label"></label>
+                    <input asp-for="accountName" class="form-control" />
+                    <span asp-validation-for="accountName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="bsb" class="control-label"></label>
+                    <input asp-for="bsb" class="form-control" />
+                    <span asp-validation-for="bsb" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="accountNumber" class="control-label"></label>
+                    <input asp-for="accountNumber" class="form-control" />
+                    <span asp-validation-for="accountNumber" class="text-danger"></span>
+                </div>
+            </section>
+
+            <section class="col">
+                <h2>Times & Dates</h2>
+                <div class="form-group">
+                    <label asp-for="currentTerm" class="control-label"></label>
+                    <select asp-for="currentTerm" class="form-control" asp-items="ViewBag.Terms"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="currentYear" class="control-label"></label>
+                    <input asp-for="currentYear" class="form-control" />
+                    <span asp-validation-for="currentYear" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="termStartDate" class="control-label"></label>
+                    <input asp-for="termStartDate" class="form-control" />
+                    <span asp-validation-for="termStartDate" class="text-danger"></span>
+                </div>
+                @if (ViewBag.IsUnpaidLessons) {
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                } else if (ViewBag.canCreateInvoice) {
+                    <div class="form-group">
+                        <p><i>An Invoice for the Selected Individual Already Exists, Cannot Create Invoice</i></p>
+                        <input type="submit" value="Create" class="btn btn-primary" disabled />
+                    </div>
+                } else {
+                <div class="form-group">
+                    <p><i>There is no Outstanding Lessons, Cannot Create Invoice</i></p>
+                    <input type="submit" value="Create" class="btn btn-primary" disabled />
+                </div>
+                }
+            </section>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
