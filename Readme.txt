@@ -5,3 +5,6 @@ Basic Plan:
 - Choose which assignment 1 or combinations of assingments will be used for assingment 2
 - Setup Github
 - Organise workload management for team members (e.g. Excel Sheet, Google Docs, Trello)
+
+Google Drive:
+https://drive.google.com/drive/folders/1mwXMpd9OoqQZfMIvixL2UK9uATyei5BG
