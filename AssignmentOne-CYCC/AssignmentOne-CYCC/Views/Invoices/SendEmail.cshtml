@@ -6,8 +6,14 @@
 
 <h1>Send Email</h1>
 
+
+
 @if (ViewBag.success != null) {
 <p>Success</p>
+} else if (ViewBag.error != null) {
+<p>@ViewBag.error</p>
 } else {
 <p>ERROR</p>
 }
+
+<a asp-controller="Invoices" asp-action="Index">Back</a>

@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using System.Net.Mail;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using System.Net;
+using System.IO;
+using System.Web;
 
 namespace AssignmentOne_CYCC.Controllers
 {
@@ -302,7 +304,7 @@ namespace AssignmentOne_CYCC.Controllers
             {
                 return NotFound();
             }
-
+            
             return View(invoice);
         }
 
@@ -354,6 +356,20 @@ namespace AssignmentOne_CYCC.Controllers
             return View(invoice);
         }
 
+        public async Task<IActionResult> SendEmailConfirm(int id)
+        {
+            var modelValue = IncludeInvoiceAndCostData(id);
+            // Get relevant data.
+            var invoice = await _context.Invoice.FirstOrDefaultAsync(m => m.Id == id);
+            if (invoice == null)
+                return View("404");
+            Students student = _context.Students.Find(invoice.StudentId);
+
+            // Get a sample of email template.
+            ViewBag.content = GetInvoiceAsString((int)id);
+            return View(invoice);
+        }
+
         public async Task<IActionResult> SendEmail(int id)
         {
             ViewData viewData;
@@ -378,6 +394,8 @@ namespace AssignmentOne_CYCC.Controllers
             }
             //======================
 
+
+
             if (viewData.status != StatusEnum.success)
             {
                 return View();
@@ -399,26 +417,37 @@ namespace AssignmentOne_CYCC.Controllers
             string studentFullName = "";
             string Content = viewData.view;
 
-
-            using (var message = new MailMessage(eSenderUsername, eRecipient))
+            //======================
+            // Ensure email is not a random persons email.
+            if (eRecipient.Contains("@cdu.edu.au") || eRecipient.Contains("@students.cdu.edu.au"))
             {
-                message.To.Add(new MailAddress(eRecipient));
-                message.From = new MailAddress(eSenderUsername, "CYCC No-Reply");
-                message.Subject = "CYCC - Invoice for " + studentFullName;
-                message.Body = Content;
-                message.IsBodyHtml = true;
-
-                using (var smtpClient = new SmtpClient(eSenderHost, eSenderPort))
+                using (var message = new MailMessage(eSenderUsername, eRecipient))
                 {
-                    smtpClient.Host = eSenderHost;
-                    smtpClient.EnableSsl = eSenderIsSSL;
-                    smtpClient.Credentials = new NetworkCredential(eSenderUsername, eSenderPwd);
-                    smtpClient.Send(message);
-                    ViewBag.success = "true";
-                    return View();
+                    message.To.Add(new MailAddress(eRecipient));
+                    message.From = new MailAddress(eSenderUsername, "CYCC No-Reply");
+                    message.Subject = "CYCC - Invoice for " + studentFullName;
+                    message.Body = Content;
+                    message.IsBodyHtml = true;
+
+                    using (var smtpClient = new SmtpClient(eSenderHost, eSenderPort))
+                    {
+                        smtpClient.Host = eSenderHost;
+                        smtpClient.EnableSsl = eSenderIsSSL;
+                        smtpClient.Credentials = new NetworkCredential(eSenderUsername, eSenderPwd);
+                        try
+                        {
+                            smtpClient.Send(message);
+                        }
+                        catch (Exception)
+                        {
+                            ViewBag.error = "Internal Error: Could not send the email.";
+                            return View();
+                        }
+                    }
                 }
             }
-
+            ViewBag.success = "true";
+            return View();
         }
 
         private ViewData GetInvoiceAsString(int id)

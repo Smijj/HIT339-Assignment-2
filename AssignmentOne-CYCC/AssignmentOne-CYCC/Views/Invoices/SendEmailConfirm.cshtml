@@ -1,0 +1,37 @@
+﻿@model AssignmentOne_CYCC.Models.Invoice
+
+@{
+    ViewData["Title"] = "Confirm Email";
+}
+
+<h1>Confirm Email</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Reference Number</th>
+            <th>Email</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Student.FullName</td>
+            <td>@Model.ReferenceNo</td>
+            <td>@Model.Student.Email</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @if (@ViewBag.content != null) {
+                    Html.DisplayText(ViewBag.content);
+                } else {
+                    Html.DisplayText("Internal Error. Please try again later.");
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<a asp-controller="Invoices" asp-action="Index">Back</a> | 
+<a asp-action="SendEmail" asp-route-id="@Model.Id">Send Email</a>
