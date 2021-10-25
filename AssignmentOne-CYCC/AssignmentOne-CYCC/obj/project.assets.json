@@ -7255,11 +7255,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\swhum\\OneDrive - Charles Darwin University\\HIT339 Distributed Development\\Assignment 1\\AssignmentOne-CYCC - Week7\\AssignmentOne-CYCC\\AssignmentOne-CYCC.csproj",
+      "projectUniqueName": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\AssignmentOne-CYCC\\AssignmentOne-CYCC.csproj",
       "projectName": "AssignmentOne-CYCC",
-      "projectPath": "C:\\Users\\swhum\\OneDrive - Charles Darwin University\\HIT339 Distributed Development\\Assignment 1\\AssignmentOne-CYCC - Week7\\AssignmentOne-CYCC\\AssignmentOne-CYCC.csproj",
+      "projectPath": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\AssignmentOne-CYCC\\AssignmentOne-CYCC.csproj",
       "packagesPath": "C:\\Users\\swhum\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\swhum\\OneDrive - Charles Darwin University\\HIT339 Distributed Development\\Assignment 1\\AssignmentOne-CYCC - Week7\\AssignmentOne-CYCC\\obj\\",
+      "outputPath": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\AssignmentOne-CYCC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

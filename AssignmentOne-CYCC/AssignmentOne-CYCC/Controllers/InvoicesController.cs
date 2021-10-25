@@ -9,16 +9,23 @@ using AssignmentOne_CYCC.Data;
 using AssignmentOne_CYCC.Models;
 using Microsoft.EntityFrameworkCore.Query;
 
+using Microsoft.Extensions.Configuration;
+using System.Net.Mail;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using System.Net;
 
 namespace AssignmentOne_CYCC.Controllers
 {
+    public enum StatusEnum { success, invalidInvoice, invalidStudent, viewError };
     public class InvoicesController : Controller
     {
         private readonly AssignmentOne_CYCCContext _context;
+        private readonly IConfiguration _config;
 
-        public InvoicesController(AssignmentOne_CYCCContext context)
+        public InvoicesController(AssignmentOne_CYCCContext context, IConfiguration configuration)
         {
             _context = context;
+            _config = configuration;
         }
         // Custom Function.
         /// <summary>
@@ -51,7 +58,7 @@ namespace AssignmentOne_CYCC.Controllers
         /// <returns>ViewResult - Invoice.Index</returns>
         public async Task<IActionResult> Index()
         {
-            
+
             ViewBag.success = Request.Query["success"].ToString();
             ViewBag.error = Request.Query["error"].ToString();
 
@@ -81,7 +88,7 @@ namespace AssignmentOne_CYCC.Controllers
 
             // Try to get Invoice of Id == id.
             IncludeInvoiceAndCostData(id);
-			/*var modelValue = _context.Invoice.Include(m => m.Student).Include(m => m.Lesson).Where(m => m.Id == id);
+            /*var modelValue = _context.Invoice.Include(m => m.Student).Include(m => m.Lesson).Where(m => m.Id == id);
 
 			foreach (var m in modelValue) {
 				foreach (var l in m.Lesson) {
@@ -90,7 +97,7 @@ namespace AssignmentOne_CYCC.Controllers
 			}*/
 
             // Include Students into invoice model instance.
-			var invoice = await _context.Invoice
+            var invoice = await _context.Invoice
                 .Include(m => m.Student)
                 //.Include(m => m.Lesson)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -124,19 +131,19 @@ namespace AssignmentOne_CYCC.Controllers
                 ViewBag.LockStudent = -1;
                 ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
             }
-			// Get default Information from last record.
-			ViewBag.Comment = "";
-			ViewBag.Signature = "";
-			ViewBag.Bank = "";
-			ViewBag.AccountName = "";
-			ViewBag.AccountNo = "";
-			ViewBag.BSB = "";
-			ViewBag.Term = "";
-			ViewBag.Year = "";
-			ViewBag.TermStartDate = "";
-			ViewBag.PaymentFinalDate = "";
+            // Get default Information from last record.
+            ViewBag.Comment = "";
+            ViewBag.Signature = "";
+            ViewBag.Bank = "";
+            ViewBag.AccountName = "";
+            ViewBag.AccountNo = "";
+            ViewBag.BSB = "";
+            ViewBag.Term = "";
+            ViewBag.Year = "";
+            ViewBag.TermStartDate = "";
+            ViewBag.PaymentFinalDate = "";
 
-			if (_context.Invoice.Count() > 0)
+            if (_context.Invoice.Count() > 0)
             {
                 ViewBag.Comment = _context.Invoice.OrderBy(ag => ag.Id).Last().Comment;
                 ViewBag.Signature = _context.Invoice.OrderBy(ag => ag.Id).Last().Signature;
@@ -154,16 +161,16 @@ namespace AssignmentOne_CYCC.Controllers
 
             // Provide data on lessons for View.
             ViewBag.Lessons = new SelectList(_context.Lesson, "id", "LessonTime", _context.Invoice);
-			// If id is set, get student information, and check if the student id is valid (returning NotFoundResult if invalid).
-			if (id != null) {
-				var Student = await _context.Students
-					.FirstOrDefaultAsync(m => m.Id == id);
+            // If id is set, get student information, and check if the student id is valid (returning NotFoundResult if invalid).
+            if (id != null) {
+                var Student = await _context.Students
+                    .FirstOrDefaultAsync(m => m.Id == id);
 
-				if (Student == null) {
-					return NotFound();
-				}
-			}
-			return View();
+                if (Student == null) {
+                    return NotFound();
+                }
+            }
+            return View();
 
         }
 
@@ -181,28 +188,28 @@ namespace AssignmentOne_CYCC.Controllers
             // Check if any data is provided, else redirect back to form page.
             if (invoice == null) return RedirectToAction(nameof(Create));
             // Check if Student.Id exists, else return an error message.
-			if (_context.Students.Any(ag => ag.Id == invoice.StudentId)) {
+            if (_context.Students.Any(ag => ag.Id == invoice.StudentId)) {
 
                 // Get all lessons linked to this Student that: Have NOT been paid AND are NOT already associated with another Invoice.
                 IEnumerable<Lesson> lessonQuery =
                     from lesson in _context.Lesson
                     where lesson.StudentId == invoice.StudentId && lesson.Paid == false && lesson.InvoiceId == null
-					select lesson;
+                    select lesson;
 
                 // Check if there is no lessons unpaid, not already linked, if there is none return error.
                 if (!lessonQuery.Any()) {
                     ModelState.AddModelError("EmptyLessonError", "There are currently no outstanding lessons not already invoiced for this student.");
-			        ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
-			        return View(invoice);
-				}
+                    ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
+                    return View(invoice);
+                }
                 // Covert to array.
                 invoice.Lesson = lessonQuery.ToArray();
 
-			} else {
+            } else {
                 ModelState.AddModelError("StudentId", "The Student provided does not exist. Please select a valid option.");
                 ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
                 return View(invoice);
-			}
+            }
 
             if (ModelState.IsValid)
             {
@@ -313,10 +320,10 @@ namespace AssignmentOne_CYCC.Controllers
             var invoice = await _context.Invoice.Include(m => m.Lesson).FirstOrDefaultAsync(m => m.Id == id);
             // Clear reference in lesson model, severing the relationship so that the invoice can be deleted. 
             // Lesson.Paid is set to false, as a lesson cannot be paid if there is no invoice associated with it.
-			foreach (Lesson lesson in invoice.Lesson) {
+            foreach (Lesson lesson in invoice.Lesson) {
                 lesson.InvoiceId = null;
                 lesson.Paid = false;
-			}
+            }
             _context.Invoice.Remove(invoice);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -333,12 +340,12 @@ namespace AssignmentOne_CYCC.Controllers
         /// <returns>ViewResult - Invoice->GenerateInvoice | NotFoundResult</returns>
         public async Task<IActionResult> GenerateInvoice(int id) {
 
-            
+
             var modelValue = IncludeInvoiceAndCostData(id);
             var invoice = await _context.Invoice.FirstOrDefaultAsync(m => m.Id == id);
             if (invoice == null)
                 return NotFound();
-			Students student = _context.Students.Find(invoice.StudentId);
+            Students student = _context.Students.Find(invoice.StudentId);
             if (invoice == null)
             {
                 return NotFound();
@@ -346,6 +353,95 @@ namespace AssignmentOne_CYCC.Controllers
 
             return View(invoice);
         }
+
+        public async Task<IActionResult> SendEmail(int id)
+        {
+            ViewData viewData;
+            //ViewData viewData = GetInvoiceAsString(id);
+
+            //======================
+            var modelValue = IncludeInvoiceAndCostData(id);
+            // Get relevant data.
+            var invoice = await _context.Invoice.FirstOrDefaultAsync(m => m.Id == id);
+            if (invoice == null)
+                viewData = new ViewData(StatusEnum.invalidInvoice); // Invalid Invoice Id.
+            Students student = _context.Students.Find(invoice.StudentId);
+
+            try
+            {
+                string output = "StudentName: " + student.FullName;
+                viewData = new ViewData(StatusEnum.success, output);
+            }
+            catch (Exception)
+            {
+                viewData = new ViewData(StatusEnum.viewError);
+            }
+            //======================
+
+            if (viewData.status != StatusEnum.success)
+            {
+                return View();
+            }
+
+            /*string eSenderHost = MyAppData.Configuration.GetValue<string>("smtp");
+            string eSenderPwd = MyAppData.Configuration.GetValue<string>("smtp-password");
+            string eSenderUsername = MyAppData.Configuration.GetValue<string>("smtp-username");
+            int eSenderPort = MyAppData.Configuration.GetValue<int>("smtp-port");
+            bool eSenderIsSSL = MyAppData.Configuration.GetValue<bool>("smtp-IsSSL");*/
+            
+            string eSenderHost = _config["smtp:host"];
+            string eSenderPwd = _config["smtp:pwd"];
+            string eSenderUsername = _config["smtp:username"];
+            int eSenderPort = int.Parse(_config["smtp:port"]);
+            bool eSenderIsSSL = _config["smtp:isSSL"] == "true" ? true : false;
+
+            string eRecipient = student.Email;
+            string studentFullName = "";
+            string Content = viewData.view;
+
+
+            using (var message = new MailMessage(eSenderUsername, eRecipient))
+            {
+                message.To.Add(new MailAddress(eRecipient));
+                message.From = new MailAddress(eSenderUsername, "CYCC No-Reply");
+                message.Subject = "CYCC - Invoice for " + studentFullName;
+                message.Body = Content;
+                message.IsBodyHtml = true;
+
+                using (var smtpClient = new SmtpClient(eSenderHost, eSenderPort))
+                {
+                    smtpClient.Host = eSenderHost;
+                    smtpClient.EnableSsl = eSenderIsSSL;
+                    smtpClient.Credentials = new NetworkCredential(eSenderUsername, eSenderPwd);
+                    smtpClient.Send(message);
+                    ViewBag.success = "true";
+                    return View();
+                }
+            }
+
+        }
+
+        private ViewData GetInvoiceAsString(int id)
+        {
+            var modelValue = IncludeInvoiceAndCostData(id);
+            // Get relevant data.
+            var invoice = _context.Invoice.FirstOrDefault(m => m.Id == id);
+            if (invoice == null)
+                return new ViewData(StatusEnum.invalidInvoice); // Invalid Invoice Id.
+            Students student = _context.Students.Find(invoice.StudentId);
+
+            try
+            {
+                string output = "StudentName: " + student.FullName;
+                return new ViewData(StatusEnum.success, output);
+            }
+            catch (Exception)
+            {
+                return new ViewData(StatusEnum.viewError);
+            }
+        }
+
+
         /// <summary>
         /// Modifies the Lesson.Paid variable for an entire Invoice then returns the user back to the page they were on.
         /// </summary>
@@ -360,22 +456,22 @@ namespace AssignmentOne_CYCC.Controllers
             if (int.TryParse(Request.Form["Id"], out id)) {
                 // Get Invoice model instance of id.
                 Invoice invoice = await _context.Invoice.Include(m => m.Lesson).FirstOrDefaultAsync(m => m.Id == id);
-				// Set each lesson.Paid to true.
+                // Set each lesson.Paid to true.
                 foreach (var item in invoice.Lesson) {
                     item.Paid = pay;
-				}
+                }
                 _context.SaveChanges();
                 // Redirect back to last page, with success message.
                 if (ToDetails)
-                    return Redirect(nameof(Details) + "/" + id + "?Success=Invoice " + (pay?"":"un-") + "Paid successfully.");
+                    return Redirect(nameof(Details) + "/" + id + "?Success=Invoice " + (pay ? "" : "un-") + "Paid successfully.");
                 return RedirectToAction(nameof(Index), new { Success = "Invoice Paid successfully." });
-			} else {
+            } else {
                 // Redirect back to last page, with error message.
                 if (ToDetails)
                     return Redirect(nameof(Details) + "/" + id + "?error=Invalid Invoice Id.");
-                return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id."});
-			}
-		}
+                return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
+            }
+        }
         /// <summary>
         /// Modifies the Lesson.Paid variable for a single Lesson then returns the user back to the page they were on.
         /// </summary>
@@ -405,6 +501,16 @@ namespace AssignmentOne_CYCC.Controllers
                 return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
             }
 
+        }
+    }
+    public class ViewData {
+        public string view;
+        public StatusEnum status;
+
+        public ViewData(StatusEnum status, string view = "")
+        {
+            this.view = view;
+            this.status = status;
         }
     }
 }

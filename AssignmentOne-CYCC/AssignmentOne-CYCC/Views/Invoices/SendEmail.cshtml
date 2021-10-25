@@ -1,0 +1,13 @@
+﻿@model IEnumerable<AssignmentOne_CYCC.Models.Invoice>
+
+@{
+    ViewData["Title"] = "SendEmail";
+}
+
+<h1>Send Email</h1>
+
+@if (ViewBag.success != null) {
+<p>Success</p>
+} else {
+<p>ERROR</p>
+}
