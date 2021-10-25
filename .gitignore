@@ -1,12 +1,14 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+.vs/
 AssignmentOne-CYCC/AssignmentOne-CYCC/appsettings.json
-AssignmentOne-CYCC/AssignmentOne-CYCC/[Dd]ebug/
-AssignmentOne-CYCC/AssignmentOne-CYCC/[Dd]ebugPublic/
-AssignmentOne-CYCC/AssignmentOne-CYCC/[Rr]elease/
-AssignmentOne-CYCC/AssignmentOne-CYCC/[Rr]eleases/
-AssignmentOne-CYCC/AssignmentOne-CYCC/x64/
-AssignmentOne-CYCC/AssignmentOne-CYCC/x86/
-AssignmentOne-CYCC/AssignmentOne-CYCC/build/
-AssignmentOne-CYCC/AssignmentOne-CYCC/bld/
-AssignmentOne-CYCC/AssignmentOne-CYCC/[Bb]in/
-AssignmentOne-CYCC/AssignmentOne-CYCC/[Oo]bj/
-AssignmentOne-CYCC/.vs
