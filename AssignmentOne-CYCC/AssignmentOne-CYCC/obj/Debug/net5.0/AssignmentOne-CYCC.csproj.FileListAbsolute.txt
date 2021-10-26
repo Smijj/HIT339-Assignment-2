@@ -2761,3 +2761,7 @@ D:\GItRepos\HIT339-Assignment-2\AssignmentOne-CYCC\AssignmentOne-CYCC\obj\Debug\
 D:\GItRepos\HIT339-Assignment-2\AssignmentOne-CYCC\AssignmentOne-CYCC\obj\Debug\net5.0\AssignmentOne-CYCC.genruntimeconfig.cache
 D:\GItRepos\HIT339-Assignment-2\AssignmentOne-CYCC\AssignmentOne-CYCC\obj\Debug\net5.0\Razor\Views\Invoices\SendEmail.cshtml.g.cs
 D:\GItRepos\HIT339-Assignment-2\AssignmentOne-CYCC\AssignmentOne-CYCC\obj\Debug\net5.0\Razor\Views\Invoices\SendEmailConfirm.cshtml.g.cs
+D:\GItRepos\HIT339-Assignment-2\AssignmentOne-CYCC\AssignmentOne-CYCC\bin\Debug\net5.0\RazorHtmlEmails.RazorClassLib.Views.dll
+D:\GItRepos\HIT339-Assignment-2\AssignmentOne-CYCC\AssignmentOne-CYCC\bin\Debug\net5.0\RazorHtmlEmails.RazorClassLib.Views.pdb
+D:\GItRepos\HIT339-Assignment-2\AssignmentOne-CYCC\AssignmentOne-CYCC\bin\Debug\net5.0\RazorHtmlEmails.RazorClassLib.dll
+D:\GItRepos\HIT339-Assignment-2\AssignmentOne-CYCC\AssignmentOne-CYCC\bin\Debug\net5.0\RazorHtmlEmails.RazorClassLib.pdb

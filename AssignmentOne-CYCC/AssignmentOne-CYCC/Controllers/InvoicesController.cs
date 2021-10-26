@@ -16,6 +16,10 @@ using System.Net;
 using System.IO;
 using System.Web;
 
+// Custom Email Generator Classes
+using RazorHtmlEmails.RazorClassLib.Services;
+using RazorHtmlEmails.RazorClassLib.Views.Emails.InvoiceEmail;
+
 namespace AssignmentOne_CYCC.Controllers
 {
     public enum StatusEnum { success, invalidInvoice, invalidStudent, viewError };
@@ -23,11 +27,13 @@ namespace AssignmentOne_CYCC.Controllers
     {
         private readonly AssignmentOne_CYCCContext _context;
         private readonly IConfiguration _config;
+        private readonly IRazorViewToStringRenderer _razorViewToStringRenderer;
 
-        public InvoicesController(AssignmentOne_CYCCContext context, IConfiguration configuration)
+        public InvoicesController(AssignmentOne_CYCCContext context, IConfiguration configuration, IRazorViewToStringRenderer razorViewToStringRenderer)
         {
             _context = context;
             _config = configuration;
+            _razorViewToStringRenderer = razorViewToStringRenderer;
         }
         // Custom Function.
         /// <summary>
@@ -373,40 +379,15 @@ namespace AssignmentOne_CYCC.Controllers
 
         public async Task<IActionResult> SendEmail(int id)
         {
-            ViewData viewData;
-            //ViewData viewData = GetInvoiceAsString(id);
-
-            //======================
-            var modelValue = IncludeInvoiceAndCostData(id);
             // Get relevant data.
+            var modeldata = IncludeInvoiceAndCostData(id);
+
             var invoice = await _context.Invoice.FirstOrDefaultAsync(m => m.Id == id);
-            if (invoice == null)
-                viewData = new ViewData(StatusEnum.invalidInvoice); // Invalid Invoice Id.
-            Students student = _context.Students.Find(invoice.StudentId);
-
-            try
-            {
-                string output = "StudentName: " + student.FullName;
-                viewData = new ViewData(StatusEnum.success, output);
-            }
-            catch (Exception)
-            {
-                viewData = new ViewData(StatusEnum.viewError);
-            }
-            //======================
-
-
-
-            if (viewData.status != StatusEnum.success)
-            {
+            if (invoice == null) {
+                ViewBag.error = "Invalid Invoice";
                 return View();
             }
 
-            /*string eSenderHost = MyAppData.Configuration.GetValue<string>("smtp");
-            string eSenderPwd = MyAppData.Configuration.GetValue<string>("smtp-password");
-            string eSenderUsername = MyAppData.Configuration.GetValue<string>("smtp-username");
-            int eSenderPort = MyAppData.Configuration.GetValue<int>("smtp-port");
-            bool eSenderIsSSL = MyAppData.Configuration.GetValue<bool>("smtp-IsSSL");*/
             
             string eSenderHost = _config["smtp:host"];
             string eSenderPwd = _config["smtp:pwd"];
@@ -414,9 +395,23 @@ namespace AssignmentOne_CYCC.Controllers
             int eSenderPort = int.Parse(_config["smtp:port"]);
             bool eSenderIsSSL = _config["smtp:isSSL"] == "true" ? true : false;
 
-            string eRecipient = student.Email;
-            string studentFullName = "";
-            string Content = viewData.view;
+            string eRecipient = invoice.Student.Email;
+
+            // Generate Email Content
+            string content = "Error Generating Invoice"; // Fill default message in case of error.
+            try
+            {
+                InvoiceEmailViewModel invoiceEmailViewModel = new InvoiceEmailViewModel(invoice.Student.FullName, invoice.Student.LName, invoice.Student.FName, invoice.Comment, invoice.Term, invoice.TermStartDate, invoice.PaymentFinalDate, invoice.ReferenceNo, invoice.TotalCost, invoice.Semester, invoice.Student.GuardianName, invoice.Bank, invoice.AccountName, invoice.BSB, invoice.AccountNo, invoice.Signature);
+                content = await _razorViewToStringRenderer.RenderViewToStringAsync("InvoiceEmail.cshtml", invoiceEmailViewModel);
+
+            }
+            catch (Exception e)
+            {
+                ViewBag.error = "An <b>Internal Error Occurred</b> and the email was not sent. Please contact your administrator with the below error. <br>" + e.Message;
+                return View();
+            }
+
+
 
             //======================
             // Ensure email is not a random persons email.
@@ -425,9 +420,9 @@ namespace AssignmentOne_CYCC.Controllers
                 using (var message = new MailMessage(eSenderUsername, eRecipient))
                 {
                     message.To.Add(new MailAddress(eRecipient));
-                    message.From = new MailAddress(eSenderUsername, "CYCC No-Reply");
-                    message.Subject = "CYCC - Invoice for " + studentFullName;
-                    message.Body = Content;
+                    message.From = new MailAddress(eSenderUsername, "CYCM No-Reply");
+                    message.Subject = "CYCM - Invoice for " + invoice.Student.FullName;
+                    message.Body = content;
                     message.IsBodyHtml = true;
 
                     using (var smtpClient = new SmtpClient(eSenderHost, eSenderPort))
@@ -438,6 +433,7 @@ namespace AssignmentOne_CYCC.Controllers
                         try
                         {
                             smtpClient.Send(message);
+                            ViewBag.success = "Successfully Sent Email to: " + eRecipient;
                         }
                         catch (Exception)
                         {
@@ -446,8 +442,11 @@ namespace AssignmentOne_CYCC.Controllers
                         }
                     }
                 }
+            } else {
+                ViewBag.error = "Please Note that for safety reasons the email will only be sent to an address on the 'cdu.edu.au'. <br> The email address provided is not to this domain and was not sent.";
+                return View();
             }
-            ViewBag.success = "true";
+            ViewBag.error = "An unknown <b>Internal Error Occurred</b> and the email was not sent. Please contact your administrator.";
             return View();
         }
 
@@ -460,15 +459,19 @@ namespace AssignmentOne_CYCC.Controllers
                 return new ViewData(StatusEnum.invalidInvoice); // Invalid Invoice Id.
             Students student = _context.Students.Find(invoice.StudentId);
 
-            try
+            return new ViewData(StatusEnum.viewError, "NO, Use other thing!!");
+
+           /* try
             {
-                string output = "StudentName: " + student.FullName;
+                InvoiceEmailViewModel invoiceEmailViewModel = new InvoiceEmailViewModel(invoice.Student.FullName, invoice.Student.LName, invoice.Student.FName, invoice.Comment, invoice.Term, invoice.TermStartDate, invoice.PaymentFinalDate, invoice.ReferenceNo, invoice.TotalCost, invoice.Semester, invoice.Student.GuardianName, invoice.Bank, invoice.AccountName, invoice.BSB, invoice.AccountNo, invoice.Signature);
+                string ouput = await _razorViewToStringRenderer.RenderViewToStringAsync("InvoiceEmail", invoiceEmailViewModel);
+
                 return new ViewData(StatusEnum.success, output);
             }
             catch (Exception)
             {
                 return new ViewData(StatusEnum.viewError);
-            }
+            }*/
         }
 
 

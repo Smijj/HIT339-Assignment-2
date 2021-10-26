@@ -2052,6 +2052,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "RazorHtmlEmails.RazorClassLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/RazorHtmlEmails.RazorClassLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RazorHtmlEmails.RazorClassLib.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -7237,6 +7250,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "RazorHtmlEmails.RazorClassLib/1.0.0": {
+      "type": "project",
+      "path": "../RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj",
+      "msbuildProject": "../RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7245,7 +7263,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "RazorHtmlEmails.RazorClassLib >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7279,7 +7298,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj": {
+              "projectPath": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

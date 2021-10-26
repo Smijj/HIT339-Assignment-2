@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AssignmentOne_CYCC.Data;
 
+// ===== For RazorHtmlToStringRenderer hook/dependency injection =====
+using RazorHtmlEmails.RazorClassLib.Services;
+
 namespace AssignmentOne_CYCC
 {
 	public class Startup
@@ -25,9 +28,12 @@ namespace AssignmentOne_CYCC
 		public void ConfigureServices(IServiceCollection services) {
 			services.AddControllersWithViews();
 
-    services.AddDbContext<AssignmentOne_CYCCContext>(options =>
+            services.AddDbContext<AssignmentOne_CYCCContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("AssignmentOne_CYCCContext")));
-		}
+
+            // ===== For RazorHtmlToStringRenderer hook/dependency injection =====
+            services.AddScoped<IRazorViewToStringRenderer, RazorViewToStringRenderer>();
+        }
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {

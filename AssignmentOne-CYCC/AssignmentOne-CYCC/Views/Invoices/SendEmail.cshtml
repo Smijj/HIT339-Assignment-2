@@ -4,14 +4,12 @@
     ViewData["Title"] = "SendEmail";
 }
 
-<h1>Send Email</h1>
-
-
 
 @if (ViewBag.success != null) {
-<p>Success</p>
+<h1>Email Sent</h1>
+<p>@ViewBag.success</p>
 } else if (ViewBag.error != null) {
-<p>@ViewBag.error</p>
+<p>@Html.Raw(ViewBag.error)</p>
 } else {
 <p>ERROR</p>
 }

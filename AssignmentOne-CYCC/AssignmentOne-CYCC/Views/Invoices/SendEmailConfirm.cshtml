@@ -21,17 +21,46 @@
             <td>@Model.ReferenceNo</td>
             <td>@Model.Student.Email</td>
         </tr>
-        <tr>
-            <td colspan="2">
-                @if (@ViewBag.content != null) {
-                    Html.DisplayText(ViewBag.content);
-                } else {
-                    Html.DisplayText("Internal Error. Please try again later.");
-                }
-            </td>
-        </tr>
     </tbody>
 </table>
 
-<a asp-controller="Invoices" asp-action="Index">Back</a> | 
+<br />
+<hr />
+
+<p>Dear @Model.Student.FName,</p>
+<p>@Model.Comment</p>
+<p>
+    Welcome to all existing students and new students. Term @Model.Term will commence @Model.TermStartDate.ToString("D, dd MMMM, yyyy"). Please ensure your payment is finalised by @Model.PaymentFinalDate.ToString("D, dd MMMM, yyyy"). If a student is no longer attending lessons, please email the CYCM to be removed off the email list.
+</p>
+<p>
+    If paying by Bank Transfer- EFT, please forward a copy of your payment to the office, to follow up and allocate to the student.
+</p>
+<p>
+    <b>PAYMENT DETAILS:</b>
+    <br /><br />
+    Ref#: @Model.ReferenceNo<br />
+    Student: @Model.Student.FullName<br />
+    Amount: $@Model.TotalCost
+    <br /><br />
+</p>
+<p><b>Please follow this <a href="https://webpay.cdu.edu.au/musicschool/tran?tran-type=006&REFNO=@(Model.ReferenceNo)&CUSTNAME=@(Model.Student.LName)_@(Model.Student.FName)&PARENTSNAME=@(Model.Student.GuardianName)&UNITAMOUNTINCTAX=@(Model.TotalCost.ToString("0.000"))" target="_blank">link</a> to make payment for term @Model.Term, @Model.Year</b></p>
+<p><b>Apply for your Sport Vouchers for @Model.Semester, @Model.Year, please visit the <a href="https://sportvoucher.nt.gov.au/" target="_blank">sport-voucher website</a>, as schools are no longer providing students with a sport voucher.</b></p>
+<p><b>Alternatively pay via Bank Transfer - EFT - CUD bank details, delete old bank details:<br />New Bank details</b></p>
+<p>
+    <b>Bank:</b> @Model.Bank<br />
+    <b>Account Name:</b> @Model.AccountName.<br />
+    <b>BSB Number:</b> @Model.BSB<br />
+    <b>Account Number:</b> @Model.AccountNo<br />
+    <b>Reference number - please include 'CYCM, Reference number and student name'</b>
+</p>
+<p><em>The CYCM is committed to providing students with quality lessons in a positive learning environment.</em></p>
+<p>
+    Regards,<br />
+    @Model.Signature
+</p>
+<br />
+<hr />
+<br />
+
+<a asp-controller="Invoices" asp-action="Index">Back</a> |
 <a asp-action="SendEmail" asp-route-id="@Model.Id">Send Email</a> 
