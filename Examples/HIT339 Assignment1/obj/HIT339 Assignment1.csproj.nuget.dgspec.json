@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\slyer\\OneDrive\\__University\\Year 3\\Semester 2\\HIT339 Distributed Development\\Assessments\\Assignment 1 ~ Due 1-10-21\\HIT339 Assignment1\\HIT339 Assignment1.csproj": {}
+    "F:\\GitHub\\HIT339-Assignment-2\\Examples\\HIT339 Assignment1\\HIT339 Assignment1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\slyer\\OneDrive\\__University\\Year 3\\Semester 2\\HIT339 Distributed Development\\Assessments\\Assignment 1 ~ Due 1-10-21\\HIT339 Assignment1\\HIT339 Assignment1.csproj": {
+    "F:\\GitHub\\HIT339-Assignment-2\\Examples\\HIT339 Assignment1\\HIT339 Assignment1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\slyer\\OneDrive\\__University\\Year 3\\Semester 2\\HIT339 Distributed Development\\Assessments\\Assignment 1 ~ Due 1-10-21\\HIT339 Assignment1\\HIT339 Assignment1.csproj",
+        "projectUniqueName": "F:\\GitHub\\HIT339-Assignment-2\\Examples\\HIT339 Assignment1\\HIT339 Assignment1.csproj",
         "projectName": "HIT339 Assignment1",
-        "projectPath": "C:\\Users\\slyer\\OneDrive\\__University\\Year 3\\Semester 2\\HIT339 Distributed Development\\Assessments\\Assignment 1 ~ Due 1-10-21\\HIT339 Assignment1\\HIT339 Assignment1.csproj",
-        "packagesPath": "C:\\Users\\slyer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\slyer\\OneDrive\\__University\\Year 3\\Semester 2\\HIT339 Distributed Development\\Assessments\\Assignment 1 ~ Due 1-10-21\\HIT339 Assignment1\\obj\\",
+        "projectPath": "F:\\GitHub\\HIT339-Assignment-2\\Examples\\HIT339 Assignment1\\HIT339 Assignment1.csproj",
+        "packagesPath": "C:\\Users\\Declan Smyth\\.nuget\\packages\\",
+        "outputPath": "F:\\GitHub\\HIT339-Assignment-2\\Examples\\HIT339 Assignment1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\slyer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Declan Smyth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

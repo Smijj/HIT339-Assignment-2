@@ -7268,23 +7268,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\swhum\\.nuget\\packages\\": {},
+    "C:\\Users\\Declan Smyth\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\AssignmentOne-CYCC\\AssignmentOne-CYCC.csproj",
+      "projectUniqueName": "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\AssignmentOne-CYCC\\AssignmentOne-CYCC.csproj",
       "projectName": "AssignmentOne-CYCC",
-      "projectPath": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\AssignmentOne-CYCC\\AssignmentOne-CYCC.csproj",
-      "packagesPath": "C:\\Users\\swhum\\.nuget\\packages\\",
-      "outputPath": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\AssignmentOne-CYCC\\obj\\",
+      "projectPath": "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\AssignmentOne-CYCC\\AssignmentOne-CYCC.csproj",
+      "packagesPath": "C:\\Users\\Declan Smyth\\.nuget\\packages\\",
+      "outputPath": "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\AssignmentOne-CYCC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\swhum\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Declan Smyth\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7299,8 +7299,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj": {
-              "projectPath": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj"
+            "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj": {
+              "projectPath": "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj"
             }
           }
         }

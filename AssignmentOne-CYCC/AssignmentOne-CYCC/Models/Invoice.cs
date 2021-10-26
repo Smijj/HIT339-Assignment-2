@@ -47,7 +47,7 @@ namespace AssignmentOne_CYCC.Models
         [RegularExpression("^[1234]$", ErrorMessage = "Please enter a valid term: 1-4."), Range(1,1)]
         public int Term { get; set; }
         
-        [RegularExpression("^20[0-9][0-9]$", ErrorMessage = "Please enter a valid year: 20XX."), Range(4,4)]
+        [RegularExpression("^20[0-9][0-9]$", ErrorMessage = "Please enter a valid year: 20XX.")]
         public int Year { get; set; }
         
         public int Semester {

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj": {}
+    "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj": {}
   },
   "projects": {
-    "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj": {
+    "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj",
+        "projectUniqueName": "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj",
         "projectName": "RazorHtmlEmails.RazorClassLib",
-        "projectPath": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj",
-        "packagesPath": "C:\\Users\\swhum\\.nuget\\packages\\",
-        "outputPath": "D:\\GItRepos\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\obj\\",
+        "projectPath": "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\RazorHtmlEmails.RazorClassLib.csproj",
+        "packagesPath": "C:\\Users\\Declan Smyth\\.nuget\\packages\\",
+        "outputPath": "F:\\GitHub\\HIT339-Assignment-2\\AssignmentOne-CYCC\\RazorHtmlEmails.RazorClassLib\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\swhum\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Declan Smyth\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

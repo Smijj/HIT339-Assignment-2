@@ -223,7 +223,7 @@ namespace AssignmentOne_CYCC.Controllers
             {
                 _context.Add(invoice);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(GenerateInvoice), new { id = invoice.Id });  // Redirect to GenerateInvoice page of same Invoice.
+                return RedirectToAction(nameof(SendEmailConfirm), new { id = invoice.Id });  // Redirect to SendEmailConfirm page of same Invoice.
             }
             ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");       // Get data for drop-down.
             return View(invoice);
@@ -341,26 +341,6 @@ namespace AssignmentOne_CYCC.Controllers
         private bool InvoiceExists(int id)
         {
             return _context.Invoice.Any(e => e.Id == id);
-        }
-        /// <summary>
-        /// Returns filled HTML template.
-        /// </summary>
-        /// <param name="id">(Required) Invoice Id</param>
-        /// <returns>ViewResult - Invoice->GenerateInvoice | NotFoundResult</returns>
-        public async Task<IActionResult> GenerateInvoice(int id) {
-
-
-            var modelValue = IncludeInvoiceAndCostData(id);
-            var invoice = await _context.Invoice.FirstOrDefaultAsync(m => m.Id == id);
-            if (invoice == null)
-                return NotFound();
-            Students student = _context.Students.Find(invoice.StudentId);
-            if (invoice == null)
-            {
-                return NotFound();
-            }
-
-            return View(invoice);
         }
 
         public async Task<IActionResult> SendEmailConfirm(int id)
