@@ -153,7 +153,6 @@ namespace AssignmentOne_CYCC.Controllers
 
             if (_context.Invoice.Count() > 0)
             {
-                ViewBag.Comment = _context.Invoice.OrderBy(ag => ag.Id).Last().Comment;
                 ViewBag.Signature = _context.Invoice.OrderBy(ag => ag.Id).Last().Signature;
                 ViewBag.Bank = _context.Invoice.OrderBy(ag => ag.Id).Last().Bank;
                 ViewBag.AccountName = _context.Invoice.OrderBy(ag => ag.Id).Last().AccountName;

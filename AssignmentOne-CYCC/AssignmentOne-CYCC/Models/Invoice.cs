@@ -38,13 +38,13 @@ namespace AssignmentOne_CYCC.Models
         public string Bank { get; set; }
         public string AccountName { get; set; }
 
-        [Display(Name = "Account Number"), RegularExpression("^[0-9]{30,30}$", ErrorMessage = "Please enter a valid numeric Account Number."), StringLength(30)]
+        [Display(Name = "Account Number"), RegularExpression("^[0-9]{8,8}$", ErrorMessage = "Please enter a valid numeric Account Number."), StringLength(8)]
         public string AccountNo { get; set; }
 
         [RegularExpression("^[0-9]{6,6}$", ErrorMessage = "Must be a valid six digit BSB number"), StringLength(6)]
         public string BSB { get; set; }
 
-        [RegularExpression("^[1234]$", ErrorMessage = "Please enter a valid term: 1-4."), Range(1,1)]
+        [RegularExpression("^[1234]$", ErrorMessage = "Please enter a valid term: 1-4.")]
         public int Term { get; set; }
         
         [RegularExpression("^20[0-9][0-9]$", ErrorMessage = "Please enter a valid year: 20XX.")]
