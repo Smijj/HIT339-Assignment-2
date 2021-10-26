@@ -44,10 +44,10 @@ namespace AssignmentOne_CYCC.Models
         [RegularExpression("^[0-9]{6,6}$", ErrorMessage = "Must be a valid six digit BSB number"), StringLength(6)]
         public string BSB { get; set; }
 
-        [RegularExpression("^[1234]$", ErrorMessage = "Please enter a valid term: 1-4."), StringLength(1)]
+        [RegularExpression("^[1234]$", ErrorMessage = "Please enter a valid term: 1-4."), Range(1,1)]
         public int Term { get; set; }
         
-        [RegularExpression("^20[0-9][0-9]$", ErrorMessage = "Please enter a valid year: 20XX."), StringLength(4)]
+        [RegularExpression("^20[0-9][0-9]$", ErrorMessage = "Please enter a valid year: 20XX."), Range(4,4)]
         public int Year { get; set; }
         
         public int Semester {

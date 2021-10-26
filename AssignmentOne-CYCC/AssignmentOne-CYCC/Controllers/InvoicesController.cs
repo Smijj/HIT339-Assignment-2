@@ -236,12 +236,13 @@ namespace AssignmentOne_CYCC.Controllers
             {
                 return NotFound();
             }
-
+            IncludeInvoiceAndCostData(id);
             var invoice = await _context.Invoice.FindAsync(id);
             if (invoice == null)
             {
                 return NotFound();
             }
+            ViewData["StudentNames"] = new SelectList(_context.Students, "Id", "FullName", invoice.StudentId);
             return View(invoice);
         }
 
