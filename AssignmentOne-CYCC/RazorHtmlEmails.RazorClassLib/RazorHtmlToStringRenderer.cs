@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace RazorHtmlEmails.RazorClassLib.Services
 {
-    // Code from: https://github.com/aspnet/Entropy/blob/dev/samples/Mvc.RenderViewToString/RazorViewToStringRenderer.cs
+    // Code slightly modified from: https://github.com/aspnet/Entropy/blob/dev/samples/Mvc.RenderViewToString/RazorViewToStringRenderer.cs
 
     public class RazorViewToStringRenderer : IRazorViewToStringRenderer
     {
@@ -35,7 +35,7 @@ namespace RazorHtmlEmails.RazorClassLib.Services
         public async Task<string> RenderViewToStringAsync<TModel>(string viewName, TModel model)
         {
             var actionContext = GetActionContext();
-            var view = FindView(actionContext, "/Views/Emails/" + viewName);
+            var view = FindView(actionContext, "/Views/Emails/" + viewName);    // Added short-cut to the Views/Emails directory for easier utility in this project.
 
             using (var output = new StringWriter())
             {

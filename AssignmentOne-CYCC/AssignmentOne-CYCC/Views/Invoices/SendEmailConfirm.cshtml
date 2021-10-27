@@ -5,6 +5,13 @@
 }
 
 <h1>Confirm Email</h1>
+<br />
+@*The Style attribute is used so Jquery can easily interface with it.*@
+<div class="loadingGifContainer" style="display: none">
+    <img src="/img/loading.gif" alt="Loading" class="loadingGif"/>
+</div>
+<div class="success" style="display: none"></div>
+<div class="error" style="display: none"></div>
 
 <table class="table">
     <thead>
@@ -95,5 +102,42 @@
 <hr />
 <br />
 
-<a asp-controller="Invoices" asp-action="Index">Back</a> |
-<a asp-action="SendEmail" asp-route-id="@Model.Id">Send Email</a> 
+<a asp-controller="Invoices" asp-action="Index">Back</a> | <a href="#" id="ConfirmEmailButton" OnClick="ConfirmEmailSend">Send Email</a>
+
+@section Scripts {
+<script>
+    $(document).ready(function () {
+        $('#ConfirmEmailButton').click(function (e) {
+            $('.loadingGifContainer').show();
+            $.ajax({
+                type: "POST",
+                url: "/Invoices/SendEmail",
+                data: 'sid=@Model.Id',
+                dataType: "json"
+            }).done(function (response) {
+                if (response != undefined) {
+                    if (response.status != undefined && response.msg != undefined) {
+                        if (response.status == "success") {
+                            $('.loadingGifContainer').hide();
+                            $('.success').show();
+                            $('.success').html(response.msg);
+                        } else if (response.status == "error") {
+                            $('.loadingGifContainer').hide();
+                            $('.error').show();
+                            $('.error').html(response.msg);
+                        }
+                    }
+                }
+            }).fail(function (response) {
+                $('.loadingGifContainer').hide();
+                $('.error').show();
+                $('.error').html("An unexpected error has occurred, and your request could not be fulfilled. Please try again later and contact your administrator if it posits.");
+            });
+        });
+    });
+
+
+    function ConfirmEmailSend () {
+    }
+</script>
+}

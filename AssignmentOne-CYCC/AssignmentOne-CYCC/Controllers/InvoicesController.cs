@@ -19,6 +19,7 @@ using System.Web;
 // Custom Email Generator Classes
 using RazorHtmlEmails.RazorClassLib.Services;
 using RazorHtmlEmails.RazorClassLib.Views.Emails.InvoiceEmail;
+using System.Text.RegularExpressions;
 
 namespace AssignmentOne_CYCC.Controllers
 {
@@ -351,11 +352,15 @@ namespace AssignmentOne_CYCC.Controllers
                 return View("404");
             Students student = _context.Students.Find(invoice.StudentId);
 
-            // Get a sample of email template.
-            ViewBag.content = GetInvoiceAsString((int)id);
             return View(invoice);
         }
 
+        /// <summary>
+        /// Sends an email to the students guardian noted in the attached student record. Returns a Json response with 'status' ('success' or 'error') and 'msg' fields.
+        /// </summary>
+        /// <param name="sid">string of Invoice Id to send</param>
+        /// <returns>Json - status, msg</returns>
+        [HttpPost]
         public async Task<IActionResult> SendEmail(int id)
         {
             // Get relevant data.
@@ -363,11 +368,12 @@ namespace AssignmentOne_CYCC.Controllers
 
             var invoice = await _context.Invoice.FirstOrDefaultAsync(m => m.Id == id);
             if (invoice == null) {
-                ViewBag.error = "Invalid Invoice";
-                return View();
+                return Json(new {
+                    status = "error",
+                    msg = "SEaj002: Invalid Invoice. Either the Invoice was deleted while confirming, it is corrupted, or it never existed. Please contact the system administrator if the error continues to occur."
+                });
             }
 
-            
             string eSenderHost = _config["smtp:host"];
             string eSenderPwd = _config["smtp:pwd"];
             string eSenderUsername = _config["smtp:username"];
@@ -377,24 +383,24 @@ namespace AssignmentOne_CYCC.Controllers
             string eRecipient = invoice.Student.Email;
 
             // Generate Email Content
-            string content = "Error Generating Invoice"; // Fill default message in case of error.
+            string content = "";
             try
             {
+                // Transform invoice model into a invliceEmailModel which the invoiceEmail view can understand.
                 InvoiceEmailViewModel invoiceEmailViewModel = new InvoiceEmailViewModel(invoice.Student.FullName, invoice.Student.LName, invoice.Student.FName, invoice.Comment, invoice.Term, invoice.TermStartDate, invoice.PaymentFinalDate, invoice.ReferenceNo, invoice.TotalCost, invoice.Semester, invoice.Student.GuardianName, invoice.Bank, invoice.AccountName, invoice.BSB, invoice.AccountNo, invoice.Signature);
                 content = await _razorViewToStringRenderer.RenderViewToStringAsync("InvoiceEmail.cshtml", invoiceEmailViewModel);
-
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                ViewBag.error = "An <b>Internal Error Occurred</b> and the email was not sent. Please contact your administrator with the below error. <br>" + e.Message;
-                return View();
+                return Json(new
+                {
+                    status = "error",
+                    msg = "SEaj 003: An Internal Error Occurred and the email was not sent. Please contact your administrator if the error continues to occur."
+                });
             }
 
-
-
-            //======================
             // Ensure email is not a random persons email.
-            if (eRecipient.Contains("@cdu.edu.au") || eRecipient.Contains("@students.cdu.edu.au"))
+            if (Regex.IsMatch(eRecipient, "@cdu.edu.au$|@students.cdu.edu.au$"))
             {
                 using (var message = new MailMessage(eSenderUsername, eRecipient))
                 {
@@ -412,47 +418,29 @@ namespace AssignmentOne_CYCC.Controllers
                         try
                         {
                             smtpClient.Send(message);
-                            ViewBag.success = "Successfully Sent Email to: " + eRecipient;
+                            // Successfully sent Email.
+                            return Json( new {
+                                status = "success",
+                                msg = "The Email was successfully sent to " + eRecipient + "."
+                            });
                         }
                         catch (Exception)
                         {
-                            ViewBag.error = "Internal Error: Could not send the email.";
-                            return View();
+                            return Json( new {
+                                status = "error",
+                                msg = "SEaj 004: An Internal Error Occurred and the email was not sent. Please contact your administrator if the error continues to occur."
+                            });
                         }
                     }
                 }
             } else {
-                ViewBag.error = "Please Note that for safety reasons the email will only be sent to an address on the 'cdu.edu.au'. <br> The email address provided is not to this domain and was not sent.";
-                return View();
+                return Json(new
+                {
+                    status = "error",
+                    msg = "SAFTEY FIRST: Please note that for TESTING reasons the email will only be sent to an address on the 'cdu.edu.au' domain. The email address provided is not to this domain and hence was not sent."
+                });
             }
-            ViewBag.error = "An unknown <b>Internal Error Occurred</b> and the email was not sent. Please contact your administrator.";
-            return View();
         }
-
-        private ViewData GetInvoiceAsString(int id)
-        {
-            var modelValue = IncludeInvoiceAndCostData(id);
-            // Get relevant data.
-            var invoice = _context.Invoice.FirstOrDefault(m => m.Id == id);
-            if (invoice == null)
-                return new ViewData(StatusEnum.invalidInvoice); // Invalid Invoice Id.
-            Students student = _context.Students.Find(invoice.StudentId);
-
-            return new ViewData(StatusEnum.viewError, "NO, Use other thing!!");
-
-           /* try
-            {
-                InvoiceEmailViewModel invoiceEmailViewModel = new InvoiceEmailViewModel(invoice.Student.FullName, invoice.Student.LName, invoice.Student.FName, invoice.Comment, invoice.Term, invoice.TermStartDate, invoice.PaymentFinalDate, invoice.ReferenceNo, invoice.TotalCost, invoice.Semester, invoice.Student.GuardianName, invoice.Bank, invoice.AccountName, invoice.BSB, invoice.AccountNo, invoice.Signature);
-                string ouput = await _razorViewToStringRenderer.RenderViewToStringAsync("InvoiceEmail", invoiceEmailViewModel);
-
-                return new ViewData(StatusEnum.success, output);
-            }
-            catch (Exception)
-            {
-                return new ViewData(StatusEnum.viewError);
-            }*/
-        }
-
 
         /// <summary>
         /// Modifies the Lesson.Paid variable for an entire Invoice then returns the user back to the page they were on.
@@ -484,6 +472,7 @@ namespace AssignmentOne_CYCC.Controllers
                 return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
             }
         }
+
         /// <summary>
         /// Modifies the Lesson.Paid variable for a single Lesson then returns the user back to the page they were on.
         /// </summary>
@@ -512,17 +501,6 @@ namespace AssignmentOne_CYCC.Controllers
                 // Redirect back to last page, with error message.
                 return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
             }
-
-        }
-    }
-    public class ViewData {
-        public string view;
-        public StatusEnum status;
-
-        public ViewData(StatusEnum status, string view = "")
-        {
-            this.view = view;
-            this.status = status;
         }
     }
 }
