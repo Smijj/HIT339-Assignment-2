@@ -4,14 +4,16 @@ using AssignmentOne_CYCC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AssignmentOne_CYCC.Migrations
 {
     [DbContext(typeof(AssignmentOne_CYCCContext))]
-    partial class AssignmentOne_CYCCContextModelSnapshot : ModelSnapshot
+    [Migration("20211028083927_StudentModelUpdate01")]
+    partial class StudentModelUpdate01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
