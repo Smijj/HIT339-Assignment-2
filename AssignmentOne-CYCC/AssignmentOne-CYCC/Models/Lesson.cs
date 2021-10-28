@@ -30,7 +30,7 @@ namespace AssignmentOne_CYCC.Models
 		public int? InvoiceId { get; set; }
 		public Invoice? Invoice { get; set; }
 
-		[Display(Name = "Term"), RegularExpression("^[1-4]$", ErrorMessage = "Please enter a valid term number: 1,2,3,4"), Range(1,1)]
+		[Display(Name = "Term"), RegularExpression("^[1-4]$", ErrorMessage = "Please enter a valid term number: 1,2,3,4")]
         public int term { get; set; }
 
         [Display(Name = "Year")]
