@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<AssignmentOne_CYCC.Models.Invoice>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Invoice - Index";
 }
 
-<h1>Index</h1>
+<h1>Invoices</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -21,31 +21,10 @@
                 @Html.DisplayNameFor(model => model.StudentId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Comment)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Signature)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bank)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AccountName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AccountNo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BSB)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Term)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Semester)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TermStartDate)
@@ -67,31 +46,10 @@
                     @*@ViewBag.Names[item.Id]*@
                 </td>
                 <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.Comment)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.Signature)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.Bank)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.AccountName)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.AccountNo)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.BSB)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.Term)
                 </td>
                 <td data-href="/Invoices/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.Semester)
                 </td>
                 <td data-href="/Invoices/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.TermStartDate)
