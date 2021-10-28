@@ -112,7 +112,7 @@
             $.ajax({
                 type: "POST",
                 url: "/Invoices/SendEmail",
-                data: 'sid=@Model.Id',
+                data: 'id=@Model.Id',
                 dataType: "json"
             }).done(function (response) {
                 if (response != undefined) {
