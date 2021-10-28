@@ -82,7 +82,7 @@ namespace AssignmentOne_CYCC.Controllers
             {
                 return NotFound();
             }
-            ViewBag.genders = new SelectList(Genders);
+            ViewData["Gender"] = new SelectList(Enum.GetValues(typeof(UserGender)));
             return View(students);
         }
 

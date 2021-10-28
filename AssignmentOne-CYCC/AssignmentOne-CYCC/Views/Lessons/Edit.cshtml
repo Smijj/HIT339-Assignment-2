@@ -35,8 +35,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="term" class="control-label"></label>
-                <input asp-for="term" class="form-control" />
-                <span asp-validation-for="term" class="text-danger"></span>
+                @*Dropdown for Term using Enums*@
+                <select asp-for="term" class="form-control" asp-items="ViewBag.Terms"></select>
             </div>
             <div class="form-group">
                 <label asp-for="LessonTime" class="control-label"></label>
