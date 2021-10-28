@@ -95,3 +95,35 @@ img.click-icon {
     width: 30px;
     margin: 5px;
 }
+
+/* Success and Error Boxes
+-----------------------------------------------------------------------*/
+div.success, div.error {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px
+}
+div.success {
+    background-color: rgb(0 255 33);
+    border: 2px rgb(0 206 27);
+}
+div.error {
+    background-color: rgb(255 97 97);
+    border: 2px rgb(202 43 43);
+}
+
+/* Loading icon
+-----------------------------------------------------------------------*/
+div.loadingGifContainer {
+    text-align: center;
+}
+
+.loadingGif {
+    margin: auto;
+    max-height: 40px;
+    margin-bottom: 20px;
+
+    transition-property: display;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
