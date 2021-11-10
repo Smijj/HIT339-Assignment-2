@@ -32,7 +32,7 @@ namespace RazorHtmlEmails.RazorClassLib.Views.Emails.InvoiceEmail
             StudentLName = studentLName ?? throw new ArgumentNullException(nameof(studentLName));
             StudentFName = studentFName ?? throw new ArgumentNullException(nameof(studentFName));
             Comment = comment ?? throw new ArgumentNullException(nameof(comment));
-            Term = term .ToString();
+            Term = term.ToString();
             TermStartDate = termStartDate;
             PaymentFinalDate = paymentFinalDate;
             ReferenceNo = referenceNo ?? throw new ArgumentNullException(nameof(referenceNo));

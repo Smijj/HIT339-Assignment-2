@@ -178,6 +178,10 @@ namespace AssignmentOne_CYCC.Controllers
                     return NotFound();
                 }
             }
+
+            // Adding the Terms enum to the viewdata for the Terms dropdown menu
+            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));
+
             return View();
 
         }
@@ -249,6 +253,8 @@ namespace AssignmentOne_CYCC.Controllers
                 return NotFound();
             }
             ViewData["StudentNames"] = new SelectList(_context.Students, "Id", "FullName", invoice.StudentId);
+            // Adding the Terms enum to the viewdata for the Terms dropdown menu
+            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));
             return View(invoice);
         }
 
@@ -387,7 +393,24 @@ namespace AssignmentOne_CYCC.Controllers
             try
             {
                 // Transform invoice model into a invliceEmailModel which the invoiceEmail view can understand.
-                InvoiceEmailViewModel invoiceEmailViewModel = new InvoiceEmailViewModel(invoice.Student.FullName, invoice.Student.LName, invoice.Student.FName, invoice.Comment, invoice.Term, invoice.TermStartDate, invoice.PaymentFinalDate, invoice.ReferenceNo, invoice.TotalCost, invoice.Semester, invoice.Student.GuardianName, invoice.Bank, invoice.AccountName, invoice.BSB, invoice.AccountNo, invoice.Signature);
+                InvoiceEmailViewModel invoiceEmailViewModel = new InvoiceEmailViewModel(
+                    invoice.Student.FullName, 
+                    invoice.Student.LName, 
+                    invoice.Student.FName, 
+                    invoice.Comment, 
+                    (int)invoice.Term, 
+                    invoice.TermStartDate, 
+                    invoice.PaymentFinalDate, 
+                    invoice.ReferenceNo, 
+                    invoice.TotalCost, 
+                    invoice.Semester, 
+                    invoice.Student.GuardianName, 
+                    invoice.Bank, 
+                    invoice.AccountName, 
+                    invoice.BSB, 
+                    invoice.AccountNo, 
+                    invoice.Signature
+                    );
                 content = await _razorViewToStringRenderer.RenderViewToStringAsync("InvoiceEmail.cshtml", invoiceEmailViewModel);
             }
             catch (Exception)
