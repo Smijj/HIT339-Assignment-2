@@ -45,6 +45,12 @@ namespace AssignmentOne_CYCC.Models
         public string BSB { get; set; }
 
         public Terms Term { get; set; }
+
+        public int displayTerm {
+            get {
+                return (int)Term;
+            }
+        }
         
         [RegularExpression("^20[0-9][0-9]$", ErrorMessage = "Please enter a valid year: 20XX.")]
         public int Year { get; set; }

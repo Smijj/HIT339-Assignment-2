@@ -33,6 +33,13 @@ namespace AssignmentOne_CYCC.Models
 
 		[Required, Display(Name = "Term")]
         public Terms term { get; set; }
+        public int displayTerm
+        {
+            get
+            {
+                return (int)term;
+            }
+        }
 
         [Required, Display(Name = "Year")]
         public int year {

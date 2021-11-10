@@ -37,7 +37,7 @@
 <p>Dear @Model.Student.FName,</p>
 <p>@Model.Comment</p>
 <p>
-    Welcome to all existing students and new students. Term @((int)Model.Term) will commence @Model.TermStartDate.ToString("d, MMMM, yyyy"). Please ensure your payment is finalised by @Model.PaymentFinalDate.ToString("d, MMMM, yyyy"). If a student is no longer attending lessons, please email the CYCM to be removed off the email list.
+    Welcome to all existing students and new students. Term @Model.displayTerm will commence @Model.TermStartDate.ToString("d, MMMM, yyyy"). Please ensure your payment is finalised by @Model.PaymentFinalDate.ToString("d, MMMM, yyyy"). If a student is no longer attending lessons, please email the CYCM to be removed off the email list.
 </p>
 <p>
     If paying by Bank Transfer - EFT, please forward a copy of your payment to the office, to follow up and allocate to the student.
@@ -63,7 +63,7 @@
     </table>
     <br /><br />
 </p>
-<p><b>Please follow this <a href="https://webpay.cdu.edu.au/musicschool/tran?tran-type=006&REFNO=@(Model.ReferenceNo)&CUSTNAME=@(Model.Student.LName)_@(Model.Student.FName)&PARENTSNAME=@(Model.Student.GuardianName)&UNITAMOUNTINCTAX=@(Model.TotalCost.ToString("0.000"))" target="_blank">link</a> to make payment for term @((int)Model.Term), @Model.Year</b></p>
+<p><b>Please follow this <a href="https://webpay.cdu.edu.au/musicschool/tran?tran-type=006&REFNO=@(Model.ReferenceNo)&CUSTNAME=@(Model.Student.LName)_@(Model.Student.FName)&PARENTSNAME=@(Model.Student.GuardianName)&UNITAMOUNTINCTAX=@(Model.TotalCost.ToString("0.000"))" target="_blank">link</a> to make payment for term @Model.displayTerm, @Model.Year</b></p>
 <p><b>Apply for your Sport Vouchers for semester @Model.Semester, @Model.Year, please visit the <a href="https://sportvoucher.nt.gov.au/" target="_blank">sport-voucher website</a>, as schools are no longer providing students with a sport voucher.</b></p>
 <p><b>Alternatively pay via Bank Transfer - EFT - CDU bank details, delete old bank details<br />New Bank details</b></p>
 <table style="text-align: left;">

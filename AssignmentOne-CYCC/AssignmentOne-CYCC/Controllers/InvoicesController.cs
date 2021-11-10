@@ -398,7 +398,7 @@ namespace AssignmentOne_CYCC.Controllers
                     invoice.Student.LName, 
                     invoice.Student.FName, 
                     invoice.Comment, 
-                    (int)invoice.Term, 
+                    invoice.displayTerm, 
                     invoice.TermStartDate, 
                     invoice.PaymentFinalDate, 
                     invoice.ReferenceNo, 
