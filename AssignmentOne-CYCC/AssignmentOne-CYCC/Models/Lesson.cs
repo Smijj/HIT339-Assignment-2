@@ -13,12 +13,10 @@ namespace AssignmentOne_CYCC.Models
 
         [ForeignKey("Students"), Display(Name = "Student")]
         public int StudentId { get; set; }
-        [Required]
         public virtual Students Students { get; set; }
 
         [ForeignKey("Instrument"), Display(Name = "Instrument")]
         public int InstrumentId { get; set; }
-        [Required]
         public virtual Instrument Instrument { get; set; }
 
         [ForeignKey("Tutor"), Display(Name = "Tutor")]
@@ -27,7 +25,6 @@ namespace AssignmentOne_CYCC.Models
 
         [ForeignKey("Duration"), Display(Name = "Duration")]
         public int DurationId { get; set; }
-        [Required]
         public virtual Duration Duration { get; set; }
 
 		[ForeignKey("Invoice")]

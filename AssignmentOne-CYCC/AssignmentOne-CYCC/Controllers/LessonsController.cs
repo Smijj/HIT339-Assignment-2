@@ -126,6 +126,7 @@ namespace AssignmentOne_CYCC.Controllers
             ViewData["InstrumentId"] = new SelectList(_context.Instrument, "Id", "Name", lesson.InstrumentId);
             ViewData["StudentId"] = new SelectList(_context.Students, "Id", "FullName", lesson.StudentId);
             ViewData["TutorId"] = new SelectList(_context.Tutor, "Id", "fullName", lesson.TutorId);
+            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));
             return View(lesson);
         }
 
