@@ -36,6 +36,7 @@ namespace AssignmentOne_CYCC.Models
         public string Signature { get; set; }
 
         public string Bank { get; set; }
+        [Display(Name = "Account Name")]
         public string AccountName { get; set; }
 
         [Display(Name = "Account Number"), RegularExpression("^[0-9]{30,30}$", ErrorMessage = "Please enter a valid 30 digit numeric Account Number."), StringLength(30)]

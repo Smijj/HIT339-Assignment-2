@@ -195,7 +195,7 @@ namespace AssignmentOne_CYCC.Controllers
         /// <returns>ViewResult - Invoice->Create (fail) | ViewResult - Invoice->GenerateInvoice (success)</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentId,Comment,Signature,Bank,AccountName,AccountNo,BSB,Term,Year,Semester,TermStartDate,PaymentFinalDate")] Invoice invoice)
+        public async Task<IActionResult> Create([Bind("StudentId,Comment,Signature,Bank,AccountName,AccountNo,BSB,Term,Year,TermStartDate,PaymentFinalDate")] Invoice invoice)
         {
             // Check if any data is provided, else redirect back to form page.
             if (invoice == null) return RedirectToAction(nameof(Create));
@@ -225,6 +225,9 @@ namespace AssignmentOne_CYCC.Controllers
 
             if (ModelState.IsValid)
             {
+
+                IncludeInvoiceAndCostData(invoice.Id);
+
                 _context.Add(invoice);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(SendEmailConfirm), new { id = invoice.Id });  // Redirect to SendEmailConfirm page of same Invoice.
