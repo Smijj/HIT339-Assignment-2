@@ -4,7 +4,9 @@
     ViewData["Title"] = "Archived Invoice Details";
 }
 <style>
-    table td, table th { padding: 5px; }
+    table td, table th {
+        padding: 5px;
+    }
 </style>
 <h1>Details</h1>
 
@@ -44,31 +46,24 @@
                     </tr>
                 </thead>
                 <tbody>
-@*                  // Displays Lesson content only if there are lessons assigned, otherwise shows message.*@
+                    @*                  // Displays Lesson content only if there are lessons assigned, otherwise shows message.*@
                     @if (Model.Lesson != null && Model.Lesson.Count > 0) {
                         foreach (var i in Model.Lesson) {
-                    <tr href-data="">
-                        <td>@i.LessonTime.ToString("dd/mm/yyyy")</td>
-                        <td>@i.Duration.LessonDuration min</td>
-                        <td>$@i.Duration.cost.ToString("0.000")</td>
-                        <td>@i.Paid.ToString()</td>
-@*                      // Shows a button to either pay or un-pay a lesson.*@
-                    </tr>
+                            <tr href-data="">
+                                <td>@i.LessonTime.ToString("dd/mm/yyyy")</td>
+                                <td>@i.Duration.LessonDuration min</td>
+                                <td>$@i.Duration.cost.ToString("0.000")</td>
+                                <td>@i.Paid.ToString()</td>
+                            </tr>
                         }
-                <tr>
-                    <td colspan="2" style="text-align: right"><b>Total Cost </b></td>
-                    <td>$@Model.TotalCost.ToString("0.000")</td>
-                    <td colspan="2">
-                        @*                      // Shows button to either pay or un-pay a Invoice.*@
-                        @if (Model.InvoicePaid) {
-                            <form asp-controller="Invoices" asp-action="PayInvoice">
-                                <input type="hidden" name="Id" value="@Model.Id" />
-                                <input type="hidden" name="Details" value="Details" />
-                                <input type="submit" name="pay" value="Un-Pay" />
-                            </form>
-                        }
-                    </td>
-                </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: right"><b>Total Cost </b></td>
+                            <td>$@Model.TotalCost.ToString("0.000")</td>
+                            <td colspan="2">
+                                @*// Shows button to either pay or un-pay a Invoice.*@
+                                <button class="payToggle" href="#">un-Pay Invoice </button>
+                            </td>
+                        </tr>
                     } else {
                         <tr>
                             <td colspan="3">No outstanding un-paid lessons for this student.</td>
@@ -149,3 +144,35 @@
     <a asp-action="Delete" asp-route-id="@Model.Id"><img src="~/img/del.png" alt="Delete" class="click-icon" /></a>
     <a asp-action="Index">Back to List</a>
 </div>
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function ($) {
+            $('*[data-href]').on('click', function () {
+                window.location = $(this).data("href");
+            });
+
+            $('button.payToggle').on('click', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Invoices/PayInvoice",
+                    data: 'id=@Model.Id',
+                    dataType: "json"
+                }).done(function (response) {
+                    if (response != undefined) {
+                        if (response.status != undefined && response.paid != undefined) {
+                            if (response.status == "success") {
+                                $('td.lesson-paid').html(response.paid);
+                                $('button.payToggle').hide();
+                            } else if (response.status == "error") {
+                                $('.error').html(response.msg);
+                            }
+                        }
+                    }
+                }).fail(function (response) {
+                    $('.error').html("An unexpected error has occurred and your request could not be completed. . Please contact your administrator if the error continues to occur.");
+                });
+            });
+        });
+    </script>
+}

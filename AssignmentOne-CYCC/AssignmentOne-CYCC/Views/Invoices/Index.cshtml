@@ -11,9 +11,9 @@
 </p>
 @if (ViewBag.success != "") {
     <p class="text-success">@ViewBag.success</p>
-} else if (ViewBag.error != "") {
-    <p class="text-danger">@ViewBag.error</p>
 }
+<p class="text-danger error">@(ViewBag.error ?? "")</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -61,10 +61,7 @@
                 </td>
                 <td>
                     @if (!item.InvoicePaid) {
-                    <form asp-action="PayInvoice">
-                        <input type="hidden" name="Id" value="@item.Id" />
-                        <input type="submit" name="Pay" value="Set Paid" />
-                    </form>
+                    <button class="payToggle" href="#" data-id="@item.Id">Pay Invoice</button>
 				    }
                 </td>
                 <td>
@@ -83,6 +80,28 @@
         jQuery(document).ready(function ($) {
             $('*[data-href]').on('click', function () {
                 window.location = $(this).data("href");
+            });
+
+            $('button.payToggle').on('click', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Invoices/PayInvoice",
+                    data: 'id=' + $(this).data("id"),
+                    dataType: "json"
+                }).done(function (response) {
+                    if (response != undefined) {
+                        if (response.status != undefined && response.paid != undefined) {
+                            if (response.status == "success") {
+                                @*// Refreshes the page without adding to the browser history. Credit - "gianebao" at https://stackoverflow.com/questions/3715047/how-to-reload-a-page-using-javascript*@
+                                window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+                            } else if (response.status == "error") {
+                                $('.error').html(response.msg);
+                            }
+                        }
+                    }
+                }).fail(function (response) {
+                    $('.error').html("An unexpected error has occurred and your request could not be completed. . Please contact your administrator if the error continues to occur.");
+                });
             });
         });
     </script>
