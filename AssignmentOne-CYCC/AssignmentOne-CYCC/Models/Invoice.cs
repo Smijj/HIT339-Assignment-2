@@ -12,15 +12,11 @@ namespace AssignmentOne_CYCC.Models
     public class Invoice {
         [Key]
         public int Id { get; set; }
-        //[ForeignKey("Lesson")]
+
         [Display(Name = "Student"), ForeignKey("Students")]
         public int StudentId { get; set; }
         public virtual Students Student { get; set; }
-        /*
-		[ForeignKey("lesson")]
-		public ICollection<int> LessonId { get; set; }
-        */
-        
+
 		public ICollection<Lesson> Lesson { get; set; }
 
         public string ReferenceNo { 

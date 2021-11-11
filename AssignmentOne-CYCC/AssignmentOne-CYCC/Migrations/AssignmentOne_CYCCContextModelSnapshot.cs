@@ -16,8 +16,8 @@ namespace AssignmentOne_CYCC.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.9")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "5.0.9");
+                //.HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrtegy.IdentityColumn);
 
             modelBuilder.Entity("AssignmentOne_CYCC.Models.Duration", b =>
                 {
@@ -45,9 +45,11 @@ namespace AssignmentOne_CYCC.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Family")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

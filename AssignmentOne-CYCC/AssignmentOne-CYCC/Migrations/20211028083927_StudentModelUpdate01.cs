@@ -30,8 +30,8 @@ namespace AssignmentOne_CYCC.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "AccountNo",
                 table: "Invoice",
-                type: "nvarchar(8)",
-                maxLength: 8,
+                type: "nvarchar(30)",
+                maxLength: 30,
                 nullable: true,
                 oldClrType: typeof(string),
                 oldType: "nvarchar(max)",

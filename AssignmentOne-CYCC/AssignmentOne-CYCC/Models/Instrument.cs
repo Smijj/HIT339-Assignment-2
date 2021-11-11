@@ -9,9 +9,9 @@ namespace AssignmentOne_CYCC.Models
     public class Instrument
     {
         public int Id { get; set; }
-        [Display(Name = "Instrument Name")]
+        [Display(Name = "Instrument Name"), Required]
         public string Name { get; set; }
-        [Display(Name = "Instrument Family")]
+        [Display(Name = "Instrument Family"), Required]
         public string Family { get; set; }
     }
 }
