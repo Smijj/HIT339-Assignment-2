@@ -72,7 +72,7 @@
                     <div id="Buttons-@item.Id">
                         <a asp-action="Edit" asp-route-id="@item.Id"><img src="img/edit.png" alt="Edit" class="row-icon"/></a>
                         <a asp-action="Delete" asp-route-id="@item.Id"><img src="img/del.png" alt="Delete" class="row-icon"/></a>
-                        <a asp-action="SendEmailConfirm" asp-route-id="@item.Id" onclick="showLoading(@item.Id)">Send Email</a>
+                        <a asp-action="SendEmailConfirm" asp-route-id="@item.Id" onclick="showLoading(@item.Id)"><img src="img/email.png" alt="Delete" class="row-icon" /></a>
                     </div>
                     <div id="loading-@item.Id" hidden>
                         <img src="/img/loading.gif" alt="Loading" />
