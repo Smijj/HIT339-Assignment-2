@@ -11,7 +11,7 @@ namespace AssignmentOne_CYCC.Models
         public int Id { get; set; }
         [Display(Name = "Duration (Min)", Description = "Time of lesson in minutes")]
         public int LessonDuration { get; set; }
-        [DataType(DataType.Currency), Display(Name = "Cost")]
+        [DataType(DataType.Currency), Display(Name = "Cost ($)")]
         public float cost { get; set; }
 
         public string DurationCost
