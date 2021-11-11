@@ -10,6 +10,17 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+@* Search Interface *@
+<form asp-action="Index" method="get">
+    Student Name: <input type="text" name="name" />
+    <input type="submit" value="Filter" />
+    @* Clears Search Filter *@
+    <input type="hidden" name="name" value="" />
+    <input type="submit" value="Clear Filter" />
+</form>
+
+
 @using (Html.BeginForm(null, null, FormMethod.Get, new { id = "letter-form" })) {
 
     <table class="table">

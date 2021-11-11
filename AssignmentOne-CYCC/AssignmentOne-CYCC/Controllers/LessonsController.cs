@@ -25,10 +25,25 @@ namespace AssignmentOne_CYCC.Controllers
         /// Returns the Lesson->Index page.
         /// </summary>
         /// <returns>ViewResult - Lesson->Index</returns>
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string name)
         {
-            var assignmentOne_CYCCContext = _context.Lesson.Include(l => l.Duration).Include(l => l.Instrument).Include(l => l.Students).Include(l => l.Tutor);
-            return View(await assignmentOne_CYCCContext.ToListAsync());
+            // Using a LINQ Query, select the lessons
+            var lessons = from l in _context.Lesson
+                          .Include("Duration")
+                          .Include("Instrument")
+                          .Include("Students")
+                          .Include("Tutor")
+                          select l;
+
+            // If the search filter is not empty then alter the LINQ Query to only show the results containing the filter
+            if (!String.IsNullOrEmpty(name)) {
+                lessons = lessons.Where(l => (l.Students.FName + " " + l.Students.LName).Contains(name));
+
+                // Old method, doesnt work when inputting a students full name.
+                //lessons = lessons.Where(i => l.Students.LName.Contains(name) || l.Students.LName.Contains(name));
+            }
+
+            return View(await lessons.ToListAsync());
         }
 
         // GET: Lessons/Details/5

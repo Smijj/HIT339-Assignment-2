@@ -1,0 +1,353 @@
+COLORTOOL v1.0
+SECTION PALETTE 31
+#000000 #007a87 #008db5 #f2f7f8
+SECTION DOCUMENT 5610
+{
+ "id": "16366231193397572280",
+ "filepath": "",
+ "settings": {
+  "snap_to_grid": true,
+  "grid_size": {
+   "_t": "Vector2",
+   "value": [
+    16,
+    16
+   ]
+  },
+  "draw_grid": false,
+  "zoom": 0,
+  "scroll": {
+   "_t": "Vector2",
+   "value": [
+    0,
+    0
+   ]
+  },
+  "old_path_root": "C:\\Users\\Declan Smyth\\Documents"
+ },
+ "objects": [
+  {
+   "_t": "RefImage",
+   "_v": 3,
+   "id": "Img0002",
+   "offset": {
+    "_t": "Vector2",
+    "value": [
+     -111,
+     140
+    ]
+   },
+   "size": {
+    "_t": "Vector2",
+    "value": [
+     571,
+     346
+    ]
+   },
+   "anchor": 3,
+   "visible": false,
+   "initialized": true,
+   "image_path": "user://images/5f442f54c6989eff986a4796b4892597.png",
+   "export_path": "",
+   "factors": {
+    "lum": 6,
+    "vib": 1,
+    "red": 1,
+    "green": 1,
+    "blue": 1
+   },
+   "multipliers": {
+    "lum": 1,
+    "vib": 1,
+    "red": 1,
+    "green": 1,
+    "blue": 1
+   },
+   "midpoints": {
+    "lum": 0.5,
+    "vib": 0.5,
+    "red": 0.5,
+    "green": 0.5,
+    "blue": 0.5
+   },
+   "color_mapping_mode": "Dynamic",
+   "color_mapping_enabled": false,
+   "smooth_transitions": false,
+   "effects": {
+    "_t": "EffectStack",
+    "_v": 0,
+    "list": [
+     {
+      "_t": "ResizeImage",
+      "_v": 1,
+      "enabled": false,
+      "mode": "height",
+      "width": 128,
+      "height": 128,
+      "scale": 0.1,
+      "interpolation": 4
+     },
+     {
+      "_t": "DitherOverlay",
+      "_v": 0,
+      "enabled": false,
+      "opacity": 0.2,
+      "pattern": "res://Shaders/dither4x4.png"
+     },
+     {
+      "_t": "RemoveNoise",
+      "_v": 0,
+      "enabled": false,
+      "threshold": 0.5,
+      "strength": 1
+     }
+    ]
+   }
+  },
+  {
+   "_t": "ColorShard",
+   "_v": 1,
+   "id": "Clr0003",
+   "color": null,
+   "color_space": "HCY",
+   "label": "Logo",
+   "position": {
+    "_t": "Vector2",
+    "value": [
+     -135,
+     -199
+    ]
+   },
+   "index": 0,
+   "locked_index": false
+  },
+  {
+   "_t": "ColorShard",
+   "_v": 1,
+   "id": "Clr0004",
+   "color": {
+    "_t": "Vector3",
+    "value": [
+     0.532788,
+     0.242281,
+     0.156683
+    ]
+   },
+   "color_space": "HCY",
+   "label": "Highlight",
+   "position": {
+    "_t": "Vector2",
+    "value": [
+     -119,
+     -199
+    ]
+   },
+   "index": 0,
+   "locked_index": false
+  },
+  {
+   "_t": "RefImage",
+   "_v": 3,
+   "id": "Img0005",
+   "offset": {
+    "_t": "Vector2",
+    "value": [
+     66,
+     167
+    ]
+   },
+   "size": {
+    "_t": "Vector2",
+    "value": [
+     202,
+     242
+    ]
+   },
+   "anchor": 3,
+   "visible": false,
+   "initialized": true,
+   "image_path": "user://images/f466d94106f7b4acabef7e426431bbac.png",
+   "export_path": "",
+   "factors": {
+    "lum": 6,
+    "vib": 1,
+    "red": 1,
+    "green": 1,
+    "blue": 1
+   },
+   "multipliers": {
+    "lum": 1,
+    "vib": 1,
+    "red": 1,
+    "green": 1,
+    "blue": 1
+   },
+   "midpoints": {
+    "lum": 0.5,
+    "vib": 0.5,
+    "red": 0.5,
+    "green": 0.5,
+    "blue": 0.5
+   },
+   "color_mapping_mode": "Dynamic",
+   "color_mapping_enabled": false,
+   "smooth_transitions": false,
+   "effects": {
+    "_t": "EffectStack",
+    "_v": 0,
+    "list": [
+     {
+      "_t": "ResizeImage",
+      "_v": 1,
+      "enabled": false,
+      "mode": "height",
+      "width": 128,
+      "height": 128,
+      "scale": 0.1,
+      "interpolation": 4
+     },
+     {
+      "_t": "DitherOverlay",
+      "_v": 0,
+      "enabled": false,
+      "opacity": 0.2,
+      "pattern": "res://Shaders/dither4x4.png"
+     },
+     {
+      "_t": "RemoveNoise",
+      "_v": 0,
+      "enabled": false,
+      "threshold": 0.5,
+      "strength": 1
+     }
+    ]
+   }
+  },
+  {
+   "_t": "ColorShard",
+   "_v": 1,
+   "id": "Clr0006",
+   "color": {
+    "_t": "Vector3",
+    "value": [
+     0.528154,
+     0.050763,
+     0.921761
+    ]
+   },
+   "color_space": "HCY",
+   "label": "Hover",
+   "position": {
+    "_t": "Vector2",
+    "value": [
+     -103,
+     -199
+    ]
+   },
+   "index": 0,
+   "locked_index": false
+  },
+  {
+   "_t": "ColorShard",
+   "_v": 1,
+   "id": "Clr0007",
+   "color": {
+    "_t": "Vector3",
+    "value": [
+     0.570595,
+     0.462077,
+     0.22386
+    ]
+   },
+   "color_space": "HCY",
+   "label": "Text Hover",
+   "position": {
+    "_t": "Vector2",
+    "value": [
+     -87,
+     -199
+    ]
+   },
+   "index": 0,
+   "locked_index": false
+  },
+  {
+   "_t": "RefImage",
+   "_v": 3,
+   "id": "Img0008",
+   "offset": {
+    "_t": "Vector2",
+    "value": [
+     -155,
+     165
+    ]
+   },
+   "size": {
+    "_t": "Vector2",
+    "value": [
+     601,
+     363
+    ]
+   },
+   "anchor": 3,
+   "visible": false,
+   "initialized": true,
+   "image_path": "user://images/0f67af9a1a2607e78721a5c9e3086ffd.png",
+   "export_path": "",
+   "factors": {
+    "lum": 6,
+    "vib": 1,
+    "red": 1,
+    "green": 1,
+    "blue": 1
+   },
+   "multipliers": {
+    "lum": 1,
+    "vib": 1,
+    "red": 1,
+    "green": 1,
+    "blue": 1
+   },
+   "midpoints": {
+    "lum": 0.5,
+    "vib": 0.5,
+    "red": 0.5,
+    "green": 0.5,
+    "blue": 0.5
+   },
+   "color_mapping_mode": "Dynamic",
+   "color_mapping_enabled": false,
+   "smooth_transitions": false,
+   "effects": {
+    "_t": "EffectStack",
+    "_v": 0,
+    "list": [
+     {
+      "_t": "ResizeImage",
+      "_v": 1,
+      "enabled": false,
+      "mode": "height",
+      "width": 128,
+      "height": 128,
+      "scale": 0.1,
+      "interpolation": 4
+     },
+     {
+      "_t": "DitherOverlay",
+      "_v": 0,
+      "enabled": false,
+      "opacity": 0.2,
+      "pattern": "res://Shaders/dither4x4.png"
+     },
+     {
+      "_t": "RemoveNoise",
+      "_v": 0,
+      "enabled": false,
+      "threshold": 0.5,
+      "strength": 1
+     }
+    ]
+   }
+  }
+ ]
+}

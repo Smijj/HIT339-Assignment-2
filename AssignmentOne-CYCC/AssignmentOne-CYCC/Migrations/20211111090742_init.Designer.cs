@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssignmentOne_CYCC.Migrations
 {
     [DbContext(typeof(AssignmentOne_CYCCContext))]
-    [Migration("20210928013848_Init-clean")]
-    partial class Initclean
+    [Migration("20211111090742_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,9 +47,11 @@ namespace AssignmentOne_CYCC.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Family")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -68,10 +70,12 @@ namespace AssignmentOne_CYCC.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AccountNo")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("BSB")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(6)
+                        .HasColumnType("nvarchar(6)");
 
                     b.Property<string>("Bank")
                         .HasColumnType("nvarchar(max)");
@@ -104,6 +108,81 @@ namespace AssignmentOne_CYCC.Migrations
                     b.ToTable("Invoice");
                 });
 
+            modelBuilder.Entity("AssignmentOne_CYCC.Models.InvoiceArchive", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AccountName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AccountNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BSB")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Bank")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuardianEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuardianName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("GuardianPhoneNumber")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("InvoicePaid")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("PaymentFinalDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReferenceNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Signature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentFName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentLName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Term")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("TermStartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<float>("TotalCost")
+                        .HasColumnType("real");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InvoiceArchive");
+                });
+
             modelBuilder.Entity("AssignmentOne_CYCC.Models.Lesson", b =>
                 {
                     b.Property<int>("Id")
@@ -132,9 +211,6 @@ namespace AssignmentOne_CYCC.Migrations
                     b.Property<int>("TutorId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("lesson")
-                        .HasColumnType("int");
-
                     b.Property<int>("term")
                         .HasColumnType("int");
 
@@ -149,8 +225,6 @@ namespace AssignmentOne_CYCC.Migrations
                     b.HasIndex("StudentId");
 
                     b.HasIndex("TutorId");
-
-                    b.HasIndex("lesson");
 
                     b.ToTable("Lesson");
                 });
@@ -177,8 +251,8 @@ namespace AssignmentOne_CYCC.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
 
                     b.Property<string>("GuardianName")
                         .IsRequired()
@@ -224,6 +298,44 @@ namespace AssignmentOne_CYCC.Migrations
                     b.ToTable("Tutor");
                 });
 
+            modelBuilder.Entity("AssignmentOne_CYCC.ViewModels.LessonViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DurationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InstrumentId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("LessonTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TutorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("term")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DurationId");
+
+                    b.HasIndex("InstrumentId");
+
+                    b.HasIndex("StudentId");
+
+                    b.HasIndex("TutorId");
+
+                    b.ToTable("lessonViewModel");
+                });
+
             modelBuilder.Entity("AssignmentOne_CYCC.Models.Invoice", b =>
                 {
                     b.HasOne("AssignmentOne_CYCC.Models.Students", "Student")
@@ -250,7 +362,7 @@ namespace AssignmentOne_CYCC.Migrations
                         .IsRequired();
 
                     b.HasOne("AssignmentOne_CYCC.Models.Invoice", "Invoice")
-                        .WithMany()
+                        .WithMany("Lesson")
                         .HasForeignKey("InvoiceId");
 
                     b.HasOne("AssignmentOne_CYCC.Models.Students", "Students")
@@ -265,15 +377,46 @@ namespace AssignmentOne_CYCC.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AssignmentOne_CYCC.Models.Invoice", null)
-                        .WithMany("Lesson")
-                        .HasForeignKey("lesson");
-
                     b.Navigation("Duration");
 
                     b.Navigation("Instrument");
 
                     b.Navigation("Invoice");
+
+                    b.Navigation("Students");
+
+                    b.Navigation("Tutor");
+                });
+
+            modelBuilder.Entity("AssignmentOne_CYCC.ViewModels.LessonViewModel", b =>
+                {
+                    b.HasOne("AssignmentOne_CYCC.Models.Duration", "Duration")
+                        .WithMany()
+                        .HasForeignKey("DurationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AssignmentOne_CYCC.Models.Instrument", "Instrument")
+                        .WithMany()
+                        .HasForeignKey("InstrumentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AssignmentOne_CYCC.Models.Students", "Students")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AssignmentOne_CYCC.Models.Tutor", "Tutor")
+                        .WithMany()
+                        .HasForeignKey("TutorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Duration");
+
+                    b.Navigation("Instrument");
 
                     b.Navigation("Students");
 
