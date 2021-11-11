@@ -42,40 +42,7 @@ namespace AssignmentOne_CYCC.Controllers
 
             return View(invoiceArchive);
         }
-
-        public InvoiceArchive ConvertFromInvoice(Invoice invoice)
-        {
-            InvoiceArchive invoiceArchive = new InvoiceArchive();
-            invoiceArchive.StudentFName = invoice.Student.FName;
-            // =========== Insert Here ==========
-
-            return invoiceArchive;
-        }
-
-
-        public bool CreateNewEntery(Invoice invoice)
-        {
-            if (ModelState.IsValid)
-            {
-                InvoiceArchive invoiceArchive = ConvertFromInvoice(invoice);
-
-
-
-
-
-
-
-
-
-
-
-
-                _context.Add(invoiceArchive);
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
-        }
+        
 
         // GET: InvoiceArchives/Delete/5
         public async Task<IActionResult> Delete(int? id)

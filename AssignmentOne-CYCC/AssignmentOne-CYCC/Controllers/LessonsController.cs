@@ -69,6 +69,7 @@ namespace AssignmentOne_CYCC.Controllers
             ViewData["InstrumentId"] = new SelectList(_context.Instrument, "Id", "Name");
             ViewData["StudentId"] = new SelectList(_context.Students, "Id", "FullName");
             ViewData["TutorId"] = new SelectList(_context.Tutor, "Id", "fullName");
+
             return View();
         }
 
@@ -152,7 +153,8 @@ namespace AssignmentOne_CYCC.Controllers
             ViewData["InstrumentId"] = new SelectList(_context.Instrument, "Id", "Name", lesson.InstrumentId);
             ViewData["StudentId"] = new SelectList(_context.Students, "Id", "FullName", lesson.StudentId);
             ViewData["TutorId"] = new SelectList(_context.Tutor, "Id", "fullName", lesson.TutorId);
-            
+
+
             // Transfer data from the Lesson model to the LessonViewModel model.
             LessonViewModel lessonViewModel = new LessonViewModel {
                 Id = lesson.Id,
@@ -227,6 +229,7 @@ namespace AssignmentOne_CYCC.Controllers
                     return RedirectToAction(nameof(Index));
 				}
 			}
+
             return View(model);
 		}
 

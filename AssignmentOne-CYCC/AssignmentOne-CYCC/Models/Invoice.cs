@@ -76,7 +76,7 @@ namespace AssignmentOne_CYCC.Models
                 return costs;
             }
         }
-        public bool InvoicePaied {
+        public bool InvoicePaid {
             get {
                 if (Lesson != null) {
 				    foreach (var item in Lesson) {

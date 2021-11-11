@@ -12,7 +12,8 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="text-danger">@Html.ValidationMessage("EmptyLessonError")</div>
+            <div class="text-danger">@Html.ValidationMessage("CustomError")</div>
+            <input type="hidden" name="ValidationCheckShown" value="@((ViewBag.InvoiceForStudentExists ?? false) ? "true" : "")" />
             <div class="form-group">
                 <label asp-for="StudentId" class="control-label"></label>
                 @if (ViewBag.LockStudent >= 0) {

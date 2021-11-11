@@ -34,35 +34,7 @@ namespace AssignmentOne_CYCC.Models
         [DataType(DataType.Date), Display(Name = "Final Payment Date")]
         public DateTime PaymentFinalDate { get; set; }
         public float TotalCost { get; set; }
-        public bool InvoicePaied { get; set; }
-
-        // ========== Lesson Data ============
-
-        public ICollection<LessonArchive> lessonArchives { get; set; }
-
-        // ========== Tutor Data ============
-
-        [Display(Name = "First Name"), StringLength(200)]
-        public string TutorFName { get; set; }
-        [Display(Name = "Last Name"), StringLength(200)]
-        public string TutorLName { get; set; }
-        public string TutorFullName
-        {
-            get
-            {
-                return TutorFName + " " + TutorLName;
-            }
-        }
-        [EmailAddress]
-        public string Email { get; set; }
-        [DataType(DataType.PhoneNumber)]
-        public int PhoneNumber { get; set; }
-
-        // ========== Instrument Data ============
-
-        public string Name { get; set; }
-        [Display(Name = "Instrument Family")]
-        public string Family { get; set; }
+        public bool InvoicePaid { get; set; }
 
         // ========== Student Data ============
 
