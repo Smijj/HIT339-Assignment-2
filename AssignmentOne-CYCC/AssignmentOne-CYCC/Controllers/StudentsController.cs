@@ -47,7 +47,8 @@ namespace AssignmentOne_CYCC.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
-            ViewBag.genders = new SelectList(Genders);      // Pass slectList to view.
+            //ViewBag.genders = new SelectList(Genders);      // Pass slectList to view.
+            ViewData["Gender"] = new SelectList(Enum.GetValues(typeof(UserGender)));
             return View();
         }
 
@@ -81,7 +82,7 @@ namespace AssignmentOne_CYCC.Controllers
             {
                 return NotFound();
             }
-            ViewBag.genders = new SelectList(Genders);
+            ViewData["Gender"] = new SelectList(Enum.GetValues(typeof(UserGender)));
             return View(students);
         }
 

@@ -26,21 +26,34 @@ namespace AssignmentOne_CYCC.Models
         [ForeignKey("Duration"), Display(Name = "Duration")]
         public int DurationId { get; set; }
         public virtual Duration Duration { get; set; }
+
 		[ForeignKey("Invoice")]
 		public int? InvoiceId { get; set; }
 		public Invoice? Invoice { get; set; }
 
+<<<<<<< HEAD
 		[Display(Name = "Term"), RegularExpression("^[1-4]$", ErrorMessage = "Please enter a valid term number: 1,2,3,4")]
         public int term { get; set; }
+=======
+		[Required, Display(Name = "Term")]
+        public Terms term { get; set; }
+        public int displayTerm
+        {
+            get
+            {
+                return (int)term;
+            }
+        }
+>>>>>>> TestingGeneralFeatures
 
-        [Display(Name = "Year")]
+        [Required, Display(Name = "Year")]
         public int year {
             get {
                 return LessonTime.Year;
             }
         }
 
-        [Display(Name = "Lesson Date & Time")]
+        [Required, Display(Name = "Lesson Date & Time")]
         public DateTime LessonTime { get; set; }
 
         public bool Paid { get; set; }

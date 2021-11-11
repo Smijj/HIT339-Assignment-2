@@ -35,15 +35,17 @@ namespace AssignmentOne_CYCC.Models
 				return (int.Parse(DateTime.Now.ToString("yyyyMMdd")) - int.Parse(DateOfBirth.ToString("yyyyMMdd"))) / 10000;
 			} set { }
 		}
-		public string Gender { get; set; }
+
+        [Required]
+		public UserGender Gender { get; set; }
 
 		[Required, StringLength(200), Display(Name = "Parent/Guardian name")]
 		public string GuardianName { get; set; }
 
-		[Required, DataType(DataType.EmailAddress), Display(Name = "Payment Contact email address")]
+		[Required, DataType(DataType.EmailAddress), Display(Name = "Payment Contact Email Address")]
 		public string Email { get; set; }
 
-		[DataType(DataType.PhoneNumber)]
+		[DataType(DataType.PhoneNumber), Display(Name = "Phone Number")]
 		public int PhoneNumber { get; set; }
 
 		// Link to lesson

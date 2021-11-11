@@ -29,7 +29,7 @@ namespace AssignmentOne_CYCC.ViewModels
         public virtual Duration Duration { get; set; }
 
         [Display(Name = "Term"), RegularExpression("^[1-4]$", ErrorMessage = "Please enter a valid term number: 1,2,3,4")]
-        public int term { get; set; }
+        public Terms term { get; set; }
 
         [Display(Name = "Lesson Date & Time")]
         public DateTime LessonTime { get; set; }
