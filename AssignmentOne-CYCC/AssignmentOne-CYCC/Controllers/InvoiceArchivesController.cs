@@ -22,7 +22,7 @@ namespace AssignmentOne_CYCC.Controllers
         // GET: InvoiceArchives
         public async Task<IActionResult> Index()
         {
-            return View(await _context.InvoiceArchive.ToListAsync());
+            return View(await _context.InvoiceArchive.Where(m => m.InvoicePaid == true).ToListAsync());
         }
 
         // GET: InvoiceArchives/Details/5
@@ -33,14 +33,14 @@ namespace AssignmentOne_CYCC.Controllers
                 return NotFound();
             }
 
-            var invoiceArchive = await _context.InvoiceArchive
+            var invoice = await _context.Invoice
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (invoiceArchive == null)
+            if (invoice == null)
             {
                 return NotFound();
             }
 
-            return View(invoiceArchive);
+            return View(invoice);
         }
         
 
@@ -52,14 +52,14 @@ namespace AssignmentOne_CYCC.Controllers
                 return NotFound();
             }
 
-            var invoiceArchive = await _context.InvoiceArchive
+            var invoice = await _context.Invoice
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (invoiceArchive == null)
+            if (invoice == null)
             {
                 return NotFound();
             }
 
-            return View(invoiceArchive);
+            return View(invoice);
         }
 
         // POST: InvoiceArchives/Delete/5
@@ -67,8 +67,8 @@ namespace AssignmentOne_CYCC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var invoiceArchive = await _context.InvoiceArchive.FindAsync(id);
-            _context.InvoiceArchive.Remove(invoiceArchive);
+            var invoice = await _context.Invoice.FindAsync(id);
+            _context.Invoice.Remove(invoice);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

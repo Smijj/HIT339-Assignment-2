@@ -1,19 +1,33 @@
-﻿@model IEnumerable<AssignmentOne_CYCC.Models.InvoiceArchive>
+﻿@model IEnumerable<AssignmentOne_CYCC.Models.Invoice>
 
 @{
-    ViewData["Title"] = "CCYM - Invoice Archive";
+    ViewData["Title"] = "Invoice - Index";
 }
 
-<h1>Invoice Archive</h1>
+<h1>Invoices</h1>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@if (ViewBag.success != "") {
+    <p class="text-success">@ViewBag.success</p>
+} else if (ViewBag.error != "") {
+    <p class="text-danger">@ViewBag.error</p>
+}
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ReferenceNo)
+                @Html.DisplayNameFor(model => model.StudentId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Term)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermStartDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PaymentFinalDate)
@@ -21,48 +35,49 @@
             <th>
                 @Html.DisplayNameFor(model => model.TotalCost)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InvoicePaid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StudentFullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GuardianName)
-            </th>
-            <th></th>
+            <th colspan="2"></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model) {
-            <tr data-href="/InvoiceArchives/Details/@item.Id">
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReferenceNo)
+            <tr>
+                <td data-href="/Invoices/Details/@item.Id">
+                    @Html.DisplayFor(modelItem => item.Student.FullName)
+                    @*@ViewBag.Names[item.Id]*@
                 </td>
-                
-                <td>
-                    @Html.DisplayFor(modelItem => item.Term)
+                <td data-href="/Invoices/Details/@item.Id">
+                    @Html.DisplayFor(modelItem => item.displayTerm)
                 </td>
-                <td>
+                <td data-href="/Invoices/Details/@item.Id">
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td data-href="/Invoices/Details/@item.Id">
+                    @Html.DisplayFor(modelItem => item.TermStartDate)
+                </td>
+                <td data-href="/Invoices/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.PaymentFinalDate)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TotalCost)
+                <td data-href="/Invoices/Details/@item.Id">
+                    $@Html.DisplayFor(modelItem => item.TotalCost)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.InvoicePaid)
+                    @if (!item.InvoicePaid) {
+                    <form asp-action="PayInvoice">
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <input type="submit" name="Pay" value="Set Paid" />
+                    </form>
+				    }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.StudentFullName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GuardianName)
+                    <div id="Buttons-@item.Id">
+                        <a asp-action="Delete" asp-route-id="@item.Id"><img src="img/del.png" alt="Delete" class="row-icon"/></a>
+                        <a asp-action="SendEmailConfirm" asp-route-id="@item.Id"><img src="img/email.png" alt="Send Email" class="row-icon" /></a>
+                    </div>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
 @section Scripts {
     <script>
         jQuery(document).ready(function ($) {
@@ -70,9 +85,5 @@
                 window.location = $(this).data("href");
             });
         });
-        function showLoading(id) {
-            $('div#buttons-' + id).hide();
-            $('div#loading-' + id).show();
-        }
     </script>
 }

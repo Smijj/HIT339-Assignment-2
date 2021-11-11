@@ -467,15 +467,6 @@ namespace AssignmentOne_CYCC.Controllers
                         {
                             smtpClient.Send(message);
                             // Successfully sent Email.
-
-                            // Add Invoice Data to Archive
-                            if (!CreateNewArchiveEntery(invoice)) {
-                                return Json( new {
-                                    status = "error",
-                                    msg = "The Email was successfully sent to " + eRecipient + ", but could not be added to the archive. Please contact your administrator to rectify this issue."
-                                });
-                            }
-
                             return Json( new {
                                 status = "success",
                                 msg = "The Email was successfully sent to " + eRecipient + "."
@@ -491,14 +482,6 @@ namespace AssignmentOne_CYCC.Controllers
                     }
                 }
             } else {
-                // Add Invoice Data to Archive
-                if (!CreateNewArchiveEntery(invoice))
-                    return Json(new
-                    {
-                        status = "error",
-                        msg = "The could not be added to the archive. Please contact your administrator to rectify this issue. SAFTEY FIRST: Please note that for TESTING reasons the email will only be sent to an address on the 'cdu.edu.au' domain. The email address provided is not to this domain and hence was not sent."
-                    });
-
                 return Json(new
                 {
                     status = "error",
@@ -566,60 +549,6 @@ namespace AssignmentOne_CYCC.Controllers
                 // Redirect back to last page, with error message.
                 return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
             }
-        }
-
-        /// <summary>
-        /// Converts a given Invoice model to a InvoiceArchive model.
-        /// </summary>
-        /// <param name="invoiceArchive"></param>
-        /// <param name="invoice"></param>
-        /// <returns></returns>
-        public InvoiceArchive ConvertFromInvoice(Invoice invoice)
-        {
-            InvoiceArchive invoiceArchive = new InvoiceArchive();
-            //Invoice content
-            invoiceArchive.ReferenceNo = invoice.ReferenceNo;
-            invoiceArchive.Comment = invoice.Comment;
-            invoiceArchive.Signature = invoice.Signature;
-            invoiceArchive.Bank = invoice.Bank;
-            invoiceArchive.AccountName = invoice.AccountName;
-            invoiceArchive.AccountNo = invoice.AccountNo;
-            invoiceArchive.BSB = invoice.BSB;
-            invoiceArchive.Term = (int)invoice.Term;
-            invoiceArchive.Year = invoice.Year;
-            invoiceArchive.TermStartDate = invoice.TermStartDate;
-            invoiceArchive.PaymentFinalDate = invoice.PaymentFinalDate;
-            invoiceArchive.TotalCost = invoice.TotalCost;
-            invoiceArchive.InvoicePaid = invoice.InvoicePaid;
-
-            //Student Data
-            invoiceArchive.StudentFName = invoice.Student.FName;
-            invoiceArchive.StudentLName = invoice.Student.LName;
-            invoiceArchive.DateOfBirth = invoice.Student.DateOfBirth;
-            invoiceArchive.Age = invoice.Student.Age;
-            invoiceArchive.Gender = invoice.Student.Gender.ToString();
-            invoiceArchive.GuardianName = invoice.Student.GuardianName;
-            invoiceArchive.GuardianEmail = invoice.Student.Email;
-            invoiceArchive.GuardianPhoneNumber = invoice.Student.PhoneNumber;
-
-            return invoiceArchive;
-        }
-        /// <summary>
-        /// Converts an Invoice model to an InvoiceArchive model.
-        /// </summary>
-        /// <param name="invoice">Invoice to convert</param>
-        /// <returns></returns>
-        public bool CreateNewArchiveEntery(Invoice invoice)
-        {
-            if (ModelState.IsValid)
-            {
-                InvoiceArchive invoiceArchive = ConvertFromInvoice(invoice);
-                _context.InvoiceArchive.Add(invoiceArchive);
-                // Check if anything is actually added to the database.
-                if (_context.SaveChanges() > 0)
-                    return true;
-            }
-            return false;
         }
     }
 }

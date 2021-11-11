@@ -1,144 +1,141 @@
-﻿@model AssignmentOne_CYCC.Models.InvoiceArchive
+﻿@model AssignmentOne_CYCC.Models.Invoice
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Archived Invoice Details";
 }
-
+<style>
+    table td, table th { padding: 5px; }
+</style>
 <h1>Details</h1>
 
 <div>
-    <h4>InvoiceArchive</h4>
+    <h4>Invoice</h4>
     <hr />
+    @if (ViewBag.success != "") {
+        <p class="text-success">@ViewBag.success</p>
+    } else if (ViewBag.error != "") {
+        <p class="text-danger">@ViewBag.error</p>
+    }
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Student.FullName)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ReferenceNo)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ReferenceNo)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lesson)
+        </dt>
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.Lesson)*@
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Duration</th>
+                        <th>Cost</th>
+                        <th>Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+@*                  // Displays Lesson content only if there are lessons assigned, otherwise shows message.*@
+                    @if (Model.Lesson != null && Model.Lesson.Count > 0) {
+                        foreach (var i in Model.Lesson) {
+                    <tr>
+                        <td>@i.LessonTime.ToString("dd/mm/yyyy")</td>
+                        <td>@i.Duration.LessonDuration min</td>
+                        <td>$@i.Duration.cost.ToString("0.000")</td>
+                        <td>@i.Paid.ToString()</td>
+@*                      // Shows a button to either pay or un-pay a lesson.*@
+                    </tr>
+                        }
+                <tr>
+                    <td colspan="2" style="text-align: right"><b>Total Cost </b></td>
+                    <td>$@Model.TotalCost.ToString("0.000")</td>
+                </tr>
+                    } else {
+                        <tr>
+                            <td colspan="3">No outstanding un-paid lessons for this student.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Comment)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Comment)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Signature)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Signature)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Bank)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Bank)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AccountName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AccountName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AccountNo)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AccountNo)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.BSB)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.BSB)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Term)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Term)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.displayTerm)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Year)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Year)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TermStartDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TermStartDate)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.PaymentFinalDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PaymentFinalDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TotalCost)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TotalCost)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.InvoicePaid)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.InvoicePaid)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StudentFName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StudentFName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StudentLName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StudentLName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateOfBirth)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GuardianName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GuardianName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GuardianEmail)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GuardianEmail)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GuardianPhoneNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GuardianPhoneNumber)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a> |
+    <a asp-action="Delete" asp-route-id="@Model.Id"><img src="~/img/del.png" alt="Delete" class="click-icon" /></a>
     <a asp-action="Index">Back to List</a>
 </div>
