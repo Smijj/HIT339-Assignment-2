@@ -14,6 +14,17 @@
 } else if (ViewBag.error != "") {
     <p class="text-danger">@ViewBag.error</p>
 }
+
+
+@* Search Interface *@
+<form asp-action="Index" method="get">
+    Student Name: <input type="text" name="name" />
+    <input type="submit" value="Filter" />
+    @* Clears Search Filter *@
+    <input type="hidden" name="name" value="" />
+    <input type="submit" value="Clear Filter" />
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -62,16 +73,16 @@
                 </td>
                 <td>
                     @if (!item.InvoicePaid) {
-                    <form asp-action="PayInvoice">
-                        <input type="hidden" name="Id" value="@item.Id" />
-                        <input type="submit" name="Pay" value="Set Paid" />
-                    </form>
-				    }
+                        <form asp-action="PayInvoice">
+                            <input type="hidden" name="Id" value="@item.Id" />
+                            <input type="submit" name="Pay" value="Set Paid" />
+                        </form>
+                    }
                 </td>
                 <td>
                     <div id="Buttons-@item.Id">
-                        <a asp-action="Edit" asp-route-id="@item.Id"><img src="img/edit.png" alt="Edit" class="row-icon"/></a>
-                        <a asp-action="Delete" asp-route-id="@item.Id"><img src="img/del.png" alt="Delete" class="row-icon"/></a>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><img src="img/edit.png" alt="Edit" class="row-icon" /></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><img src="img/del.png" alt="Delete" class="row-icon" /></a>
                         <a asp-action="SendEmailConfirm" asp-route-id="@item.Id" onclick="showLoading(@item.Id)"><img src="img/email.png" alt="Delete" class="row-icon" /></a>
                     </div>
                     <div id="loading-@item.Id" hidden>

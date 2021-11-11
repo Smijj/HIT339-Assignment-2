@@ -62,7 +62,7 @@ namespace AssignmentOne_CYCC.Controllers
         /// (optional) Takes either a 'success' or 'error' message from GET to be displayed.
         /// </summary>
         /// <returns>ViewResult - Invoice.Index</returns>
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string name)
         {
 
             ViewBag.success = Request.Query["success"].ToString();
@@ -70,7 +70,19 @@ namespace AssignmentOne_CYCC.Controllers
 
             IncludeInvoiceAndCostData();
 
-            return View(await _context.Invoice.Include(m => m.Student).Include(m => m.Lesson).ToListAsync());
+            // Using a LINQ Query, select the lessons
+            var invoices = from l in _context.Invoice
+                          .Include(m => m.Student)
+                          .Include(m => m.Lesson)
+                          select l;
+
+            // If the search filter is not empty then alter the LINQ Query to only show the results containing the filter
+            if (!String.IsNullOrEmpty(name)) {
+                invoices = invoices.Where(l => (l.Student.FName + " " + l.Student.LName).Contains(name));
+            }
+
+
+            return View(await invoices.ToListAsync());
         }
 
 
@@ -218,6 +230,7 @@ namespace AssignmentOne_CYCC.Controllers
                 } else {
                     ModelState.AddModelError("CustomError", "The Student provided does not exist. Please select a valid option.");
                     ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
+                    ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));          // Adding the Terms enum to the viewdata for the Terms dropdown menu
                     return View(invoice);
                 }
 
@@ -255,7 +268,8 @@ namespace AssignmentOne_CYCC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(SendEmailConfirm), new { id = invoice.Id });  // Redirect to SendEmailConfirm page of same Invoice.
             }
-            ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");       // Get data for drop-down.
+            ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");       // Get data for drop-down
+            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));              // Adding the Terms enum to the viewdata for the Terms dropdown menu
             return View(invoice);
         }
 
@@ -280,7 +294,7 @@ namespace AssignmentOne_CYCC.Controllers
             }
             ViewData["StudentNames"] = new SelectList(_context.Students, "Id", "FullName", invoice.StudentId);
             // Adding the Terms enum to the viewdata for the Terms dropdown menu
-            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));
+            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));      // Adding dropdown info
             return View(invoice);
         }
 
@@ -321,6 +335,7 @@ namespace AssignmentOne_CYCC.Controllers
                 }
                 return RedirectToAction(nameof(Index));     // Redirect to Invoice->Index on success.
             }
+            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));      // Adding dropdown info
             return View(invoice);
         }
 

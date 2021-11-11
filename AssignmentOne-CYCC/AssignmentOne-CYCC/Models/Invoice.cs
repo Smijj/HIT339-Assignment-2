@@ -39,6 +39,7 @@ namespace AssignmentOne_CYCC.Models
         [RegularExpression("^[0-9]{6,6}$", ErrorMessage = "Must be a valid six digit BSB number"), StringLength(6)]
         public string BSB { get; set; }
 
+        [Display(Name = "Current Term")]
         public Terms Term { get; set; }
 
         public int displayTerm {

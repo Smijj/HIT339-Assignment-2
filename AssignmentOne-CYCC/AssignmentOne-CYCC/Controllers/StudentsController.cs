@@ -47,8 +47,7 @@ namespace AssignmentOne_CYCC.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
-            //ViewBag.genders = new SelectList(Genders);      // Pass slectList to view.
-            ViewData["Gender"] = new SelectList(Enum.GetValues(typeof(UserGender)));
+            ViewData["Gender"] = new SelectList(Enum.GetValues(typeof(UserGender)));        // Adding dropdown info
             return View();
         }
 
@@ -65,7 +64,7 @@ namespace AssignmentOne_CYCC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.genders = Genders;
+            ViewData["Gender"] = new SelectList(Enum.GetValues(typeof(UserGender)));        // Adding dropdown info
             return View(students);
         }
 
@@ -82,7 +81,7 @@ namespace AssignmentOne_CYCC.Controllers
             {
                 return NotFound();
             }
-            ViewData["Gender"] = new SelectList(Enum.GetValues(typeof(UserGender)));
+            ViewData["Gender"] = new SelectList(Enum.GetValues(typeof(UserGender)));        // Adding dropdown info
             return View(students);
         }
 
@@ -118,6 +117,7 @@ namespace AssignmentOne_CYCC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Gender"] = new SelectList(Enum.GetValues(typeof(UserGender)));        // Adding dropdown info
             return View(students);
         }
 

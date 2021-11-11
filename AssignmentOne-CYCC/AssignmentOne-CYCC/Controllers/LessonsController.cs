@@ -141,7 +141,7 @@ namespace AssignmentOne_CYCC.Controllers
             ViewData["InstrumentId"] = new SelectList(_context.Instrument, "Id", "Name", lesson.InstrumentId);
             ViewData["StudentId"] = new SelectList(_context.Students, "Id", "FullName", lesson.StudentId);
             ViewData["TutorId"] = new SelectList(_context.Tutor, "Id", "fullName", lesson.TutorId);
-            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));
+            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));      // Adding dropdown info
             return View(lesson);
         }
 
@@ -182,9 +182,8 @@ namespace AssignmentOne_CYCC.Controllers
                 term = lesson.term,
                 LessonTime = lesson.LessonTime
             };
-            
-            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));
 
+            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));      // Adding dropdown info
             return View(lessonViewModel);
         }
         // ======= Retained for reference ======
@@ -226,6 +225,9 @@ namespace AssignmentOne_CYCC.Controllers
              ViewData["TutorId"] = new SelectList(_context.Tutor, "Id", "fullName", lesson.TutorId);
              return View(lesson);
          }*/
+
+
+
         /// <summary>
         /// POST handler for Lesson->Edit page.
         /// Accepts, validates, and saves Lesson Data.
@@ -250,6 +252,7 @@ namespace AssignmentOne_CYCC.Controllers
 				}
 			}
 
+            ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));      // Adding dropdown info
             return View(model);
 		}
 
