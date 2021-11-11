@@ -11,10 +11,7 @@ using Microsoft.EntityFrameworkCore.Query;
 
 using Microsoft.Extensions.Configuration;
 using System.Net.Mail;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
 using System.Net;
-using System.IO;
-using System.Web;
 
 // Custom Email Generator Classes
 using RazorHtmlEmails.RazorClassLib.Services;
@@ -197,37 +194,63 @@ namespace AssignmentOne_CYCC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("StudentId,Comment,Signature,Bank,AccountName,AccountNo,BSB,Term,Year,TermStartDate,PaymentFinalDate")] Invoice invoice)
         {
-            // Check if any data is provided, else redirect back to form page.
-            if (invoice == null) return RedirectToAction(nameof(Create));
-            // Check if Student.Id exists, else return an error message.
-            if (_context.Students.Any(ag => ag.Id == invoice.StudentId)) {
+            if (ModelState.IsValid) {
+                // Check if any data is provided, else redirect back to form page.
+                if (invoice == null) return RedirectToAction(nameof(Create));
 
-                // Get all lessons linked to this Student that: Have NOT been paid AND are NOT already associated with another Invoice.
-                IEnumerable<Lesson> lessonQuery =
-                    from lesson in _context.Lesson
-                    where lesson.StudentId == invoice.StudentId && lesson.Paid == false && lesson.InvoiceId == null
-                    select lesson;
+                // Check if Student.Id exists, else return an error message.
+                if (_context.Students.Any(ag => ag.Id == invoice.StudentId)) {
 
-                // Check if there is no lessons unpaid, not already linked, if there is none return error.
-                if (!lessonQuery.Any()) {
-                    ModelState.AddModelError("EmptyLessonError", "There are currently no outstanding lessons not already invoiced for this student.");
+                    // Get all lessons linked to this Student that: Have NOT been paid AND are NOT already associated with another Invoice.
+                    IEnumerable<Lesson> lessonQuery =
+                        from lesson in _context.Lesson
+                        where lesson.StudentId == invoice.StudentId && lesson.Paid == false && lesson.InvoiceId == null
+                        select lesson;
+
+                    // Check if there is no lessons unpaid, not already linked, if there is none return error.
+                    if (!lessonQuery.Any()) {
+                        ModelState.AddModelError("CustomError", "There are currently no outstanding lessons not already invoiced for this student.");
+                        ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
+                        return View(invoice);
+                    }
+                    // Covert to array.
+                    invoice.Lesson = lessonQuery.ToArray();
+                } else {
+                    ModelState.AddModelError("CustomError", "The Student provided does not exist. Please select a valid option.");
                     ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
                     return View(invoice);
                 }
-                // Covert to array.
-                invoice.Lesson = lessonQuery.ToArray();
 
-            } else {
-                ModelState.AddModelError("StudentId", "The Student provided does not exist. Please select a valid option.");
-                ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
-                return View(invoice);
-            }
+                // Check is an Invoice for this student already exists.
+                if (_context.Invoice.Where(m => m.StudentId == invoice.StudentId).Any()) {
+                    // Check if the Validation message has already been displayed before deleting the old Invoice record.
+                    if (Request.Form["ValidationCheckShown"] == "") {
+                        ViewBag.StudentIds = new SelectList(_context.Students, "Id", "FullName");
+                        ModelState.AddModelError("CustomError", "An Invoice for this Student already exists. Either overwrite the old Invoice (by clicking the Create button below) or edit the existing Invoice.");
+                        ViewBag.InvoiceForStudentExists = true;
+                        return View(invoice);
+                    } else {
+                        try
+                        {
+                            Invoice oldInvoice = _context.Invoice.Where(m => m.StudentId == invoice.StudentId).First();
+                            // Sever all references manually EF makes it difficult to ask SQL to do it.
+                            IncludeInvoiceAndCostData();
+                            foreach (var lesson in oldInvoice.Lesson)
+                            {
+                                lesson.InvoiceId = null;
+                            }
+                            _context.Invoice.Remove(oldInvoice);
+                        }
+                        catch (Exception)
+                        {
+                            // Catch an exception where the old invoice could not be deleted for some magical reason.
+                            ModelState.AddModelError("CustomError", "An Internal error occurred and the old Invoice could not be deleted. Please try again and contact your administrator if this error keep occurring.");
+                        }
+                    }
+                }
 
-            if (ModelState.IsValid)
-            {
 
                 IncludeInvoiceAndCostData(invoice.Id);
-
                 _context.Add(invoice);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(SendEmailConfirm), new { id = invoice.Id });  // Redirect to SendEmailConfirm page of same Invoice.
@@ -340,7 +363,6 @@ namespace AssignmentOne_CYCC.Controllers
             // Lesson.Paid is set to false, as a lesson cannot be paid if there is no invoice associated with it.
             foreach (Lesson lesson in invoice.Lesson) {
                 lesson.InvoiceId = null;
-                lesson.Paid = false;
             }
             _context.Invoice.Remove(invoice);
             await _context.SaveChangesAsync();
@@ -445,6 +467,15 @@ namespace AssignmentOne_CYCC.Controllers
                         {
                             smtpClient.Send(message);
                             // Successfully sent Email.
+
+                            // Add Invoice Data to Archive
+                            if (!CreateNewArchiveEntery(invoice)) {
+                                return Json( new {
+                                    status = "error",
+                                    msg = "The Email was successfully sent to " + eRecipient + ", but could not be added to the archive. Please contact your administrator to rectify this issue."
+                                });
+                            }
+
                             return Json( new {
                                 status = "success",
                                 msg = "The Email was successfully sent to " + eRecipient + "."
@@ -460,6 +491,14 @@ namespace AssignmentOne_CYCC.Controllers
                     }
                 }
             } else {
+                // Add Invoice Data to Archive
+                if (!CreateNewArchiveEntery(invoice))
+                    return Json(new
+                    {
+                        status = "error",
+                        msg = "The could not be added to the archive. Please contact your administrator to rectify this issue. SAFTEY FIRST: Please note that for TESTING reasons the email will only be sent to an address on the 'cdu.edu.au' domain. The email address provided is not to this domain and hence was not sent."
+                    });
+
                 return Json(new
                 {
                     status = "error",
@@ -527,6 +566,60 @@ namespace AssignmentOne_CYCC.Controllers
                 // Redirect back to last page, with error message.
                 return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
             }
+        }
+
+        /// <summary>
+        /// Converts a given Invoice model to a InvoiceArchive model.
+        /// </summary>
+        /// <param name="invoiceArchive"></param>
+        /// <param name="invoice"></param>
+        /// <returns></returns>
+        public InvoiceArchive ConvertFromInvoice(Invoice invoice)
+        {
+            InvoiceArchive invoiceArchive = new InvoiceArchive();
+            //Invoice content
+            invoiceArchive.ReferenceNo = invoice.ReferenceNo;
+            invoiceArchive.Comment = invoice.Comment;
+            invoiceArchive.Signature = invoice.Signature;
+            invoiceArchive.Bank = invoice.Bank;
+            invoiceArchive.AccountName = invoice.AccountName;
+            invoiceArchive.AccountNo = invoice.AccountNo;
+            invoiceArchive.BSB = invoice.BSB;
+            invoiceArchive.Term = invoice.Term;
+            invoiceArchive.Year = invoice.Year;
+            invoiceArchive.TermStartDate = invoice.TermStartDate;
+            invoiceArchive.PaymentFinalDate = invoice.PaymentFinalDate;
+            invoiceArchive.TotalCost = invoice.TotalCost;
+            invoiceArchive.InvoicePaid = invoice.InvoicePaid;
+
+            //Student Data
+            invoiceArchive.StudentFName = invoice.Student.FName;
+            invoiceArchive.StudentLName = invoice.Student.LName;
+            invoiceArchive.DateOfBirth = invoice.Student.DateOfBirth;
+            invoiceArchive.Age = invoice.Student.Age;
+            invoiceArchive.Gender = invoice.Student.Gender;
+            invoiceArchive.GuardianName = invoice.Student.GuardianName;
+            invoiceArchive.GuardianEmail = invoice.Student.Email;
+            invoiceArchive.GuardianPhoneNumber = invoice.Student.PhoneNumber;
+
+            return invoiceArchive;
+        }
+        /// <summary>
+        /// Converts an Invoice model to an InvoiceArchive model.
+        /// </summary>
+        /// <param name="invoice">Invoice to convert</param>
+        /// <returns></returns>
+        public bool CreateNewArchiveEntery(Invoice invoice)
+        {
+            if (ModelState.IsValid)
+            {
+                InvoiceArchive invoiceArchive = ConvertFromInvoice(invoice);
+                _context.InvoiceArchive.Add(invoiceArchive);
+                // Check if anything is actually added to the database.
+                if (_context.SaveChanges() > 0)
+                    return true;
+            }
+            return false;
         }
     }
 }

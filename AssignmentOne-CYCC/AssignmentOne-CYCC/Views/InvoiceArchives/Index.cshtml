@@ -1,0 +1,78 @@
+﻿@model IEnumerable<AssignmentOne_CYCC.Models.InvoiceArchive>
+
+@{
+    ViewData["Title"] = "CCYM - Invoice Archive";
+}
+
+<h1>Invoice Archive</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReferenceNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Term)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentFinalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoicePaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GuardianName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr data-href="/InvoiceArchives/Details/@item.Id">
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReferenceNo)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Term)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentFinalDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InvoicePaid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuardianName)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function ($) {
+            $('*[data-href]').on('click', function () {
+                window.location = $(this).data("href");
+            });
+        });
+        function showLoading(id) {
+            $('div#buttons-' + id).hide();
+            $('div#loading-' + id).show();
+        }
+    </script>
+}
