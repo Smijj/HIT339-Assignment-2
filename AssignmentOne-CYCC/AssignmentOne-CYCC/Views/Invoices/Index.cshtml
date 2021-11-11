@@ -46,24 +46,6 @@
                     @*@ViewBag.Names[item.Id]*@
                 </td>
                 <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.Comment)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.Signature)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.Bank)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.AccountName)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.AccountNo)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
-                    @Html.DisplayFor(modelItem => item.BSB)
-                </td>
-                <td data-href="/Invoices/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.displayTerm)
                 </td>
                 <td data-href="/Invoices/Details/@item.Id">
@@ -82,7 +64,7 @@
                     @if (!item.InvoicePaid) {
                     <form asp-action="PayInvoice">
                         <input type="hidden" name="Id" value="@item.Id" />
-                        <input type="submit" name="Pay" value="Paid" />
+                        <input type="submit" name="Pay" value="Set Paid" />
                     </form>
 				    }
                 </td>
