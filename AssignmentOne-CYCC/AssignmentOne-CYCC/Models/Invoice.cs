@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 
 namespace AssignmentOne_CYCC.Models
@@ -79,7 +76,7 @@ namespace AssignmentOne_CYCC.Models
                 return costs;
             }
         }
-        public bool InvoicePaied {
+        public bool InvoicePaid {
             get {
                 if (Lesson != null) {
 				    foreach (var item in Lesson) {

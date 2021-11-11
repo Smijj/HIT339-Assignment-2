@@ -79,7 +79,7 @@
                     <td>$@Model.TotalCost.ToString("0.000")</td>
                     <td colspan="2">
 @*                      // Shows button to either pay or un-pay a Invoice.*@
-                        @if (Model.InvoicePaied) {
+                        @if (Model.InvoicePaid) {
                         <form asp-action="PayInvoice">
                             <input type="hidden" name="Id" value="@Model.Id" />
                             <input type="hidden" name="Details" value="Details" />
