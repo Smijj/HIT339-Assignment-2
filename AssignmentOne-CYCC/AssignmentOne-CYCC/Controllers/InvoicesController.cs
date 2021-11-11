@@ -70,7 +70,7 @@ namespace AssignmentOne_CYCC.Controllers
 
             IncludeInvoiceAndCostData();
 
-            return View(await _context.Invoice.Include(m => m.Student).Include(m => m.Lesson).ToListAsync());
+            return View(_context.Invoice.Include(m => m.Student).Include(m => m.Lesson).ToList().Where(m => m.InvoicePaid == false));
         }
 
 
@@ -221,6 +221,7 @@ namespace AssignmentOne_CYCC.Controllers
                     return View(invoice);
                 }
 
+                /*
                 // Check is an Invoice for this student already exists.
                 if (_context.Invoice.Where(m => m.StudentId == invoice.StudentId).Any()) {
                     // Check if the Validation message has already been displayed before deleting the old Invoice record.
@@ -248,6 +249,7 @@ namespace AssignmentOne_CYCC.Controllers
                         }
                     }
                 }
+                */
 
 
                 IncludeInvoiceAndCostData(invoice.Id);

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AssignmentOne_CYCC.Data;
 using AssignmentOne_CYCC.Models;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace AssignmentOne_CYCC.Controllers
 {
@@ -22,7 +23,9 @@ namespace AssignmentOne_CYCC.Controllers
         // GET: InvoiceArchives
         public async Task<IActionResult> Index()
         {
-            return View(await _context.InvoiceArchive.Where(m => m.InvoicePaid == true).ToListAsync());
+            IncludeInvoiceAndCostData();
+            var invoice = _context.Invoice.Include(m => m.Student).ToList<Invoice>().Where(m => m.InvoicePaid == true);
+            return View(invoice);
         }
 
         // GET: InvoiceArchives/Details/5
@@ -39,7 +42,7 @@ namespace AssignmentOne_CYCC.Controllers
             {
                 return NotFound();
             }
-
+            IncludeInvoiceAndCostData();
             return View(invoice);
         }
         
@@ -76,6 +79,22 @@ namespace AssignmentOne_CYCC.Controllers
         private bool InvoiceArchiveExists(int id)
         {
             return _context.InvoiceArchive.Any(e => e.Id == id);
+        }
+
+        private IIncludableQueryable<Invoice, ICollection<Lesson>> IncludeInvoiceAndCostData(int? Id = null)
+        {
+            var modelValue = _context.Invoice.Include(m => m.Student).Include(m => m.Lesson);
+            // Only set values used (if Id is supplied).
+            if (Id != null) modelValue.Where(m => m.Id == Id);
+
+            foreach (var m in modelValue)
+            {
+                foreach (var l in m.Lesson)
+                {
+                    l.Duration = _context.Duration.Where(d => d.Id == l.DurationId).FirstOrDefault();
+                }
+            }
+            return modelValue;
         }
     }
 }

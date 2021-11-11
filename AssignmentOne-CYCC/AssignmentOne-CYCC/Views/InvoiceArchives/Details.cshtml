@@ -33,7 +33,6 @@
             @Html.DisplayNameFor(model => model.Lesson)
         </dt>
         <dd class="col-sm-10">
-            @*@Html.DisplayFor(model => model.Lesson)*@
             <table>
                 <thead>
                     <tr>
@@ -41,13 +40,14 @@
                         <th>Duration</th>
                         <th>Cost</th>
                         <th>Paid</th>
+                        <th colspan="2"></th>
                     </tr>
                 </thead>
                 <tbody>
 @*                  // Displays Lesson content only if there are lessons assigned, otherwise shows message.*@
                     @if (Model.Lesson != null && Model.Lesson.Count > 0) {
                         foreach (var i in Model.Lesson) {
-                    <tr>
+                    <tr href-data="">
                         <td>@i.LessonTime.ToString("dd/mm/yyyy")</td>
                         <td>@i.Duration.LessonDuration min</td>
                         <td>$@i.Duration.cost.ToString("0.000")</td>
@@ -58,6 +58,16 @@
                 <tr>
                     <td colspan="2" style="text-align: right"><b>Total Cost </b></td>
                     <td>$@Model.TotalCost.ToString("0.000")</td>
+                    <td colspan="2">
+                        @*                      // Shows button to either pay or un-pay a Invoice.*@
+                        @if (Model.InvoicePaid) {
+                            <form asp-controller="Invoices" asp-action="PayInvoice">
+                                <input type="hidden" name="Id" value="@Model.Id" />
+                                <input type="hidden" name="Details" value="Details" />
+                                <input type="submit" name="pay" value="Un-Pay" />
+                            </form>
+                        }
+                    </td>
                 </tr>
                     } else {
                         <tr>

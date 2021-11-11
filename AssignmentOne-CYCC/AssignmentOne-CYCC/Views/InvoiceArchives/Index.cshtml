@@ -35,38 +35,30 @@
             <th>
                 @Html.DisplayNameFor(model => model.TotalCost)
             </th>
-            <th colspan="2"></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model) {
             <tr>
-                <td data-href="/Invoices/Details/@item.Id">
+                <td data-href="/InvoiceArchives/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.Student.FullName)
                     @*@ViewBag.Names[item.Id]*@
                 </td>
-                <td data-href="/Invoices/Details/@item.Id">
+                <td data-href="/InvoiceArchives/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.displayTerm)
                 </td>
-                <td data-href="/Invoices/Details/@item.Id">
+                <td data-href="/InvoiceArchives/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.Year)
                 </td>
-                <td data-href="/Invoices/Details/@item.Id">
+                <td data-href="/InvoiceArchives/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.TermStartDate)
                 </td>
-                <td data-href="/Invoices/Details/@item.Id">
+                <td data-href="/InvoiceArchives/Details/@item.Id">
                     @Html.DisplayFor(modelItem => item.PaymentFinalDate)
                 </td>
-                <td data-href="/Invoices/Details/@item.Id">
+                <td data-href="/InvoiceArchives/Details/@item.Id">
                     $@Html.DisplayFor(modelItem => item.TotalCost)
-                </td>
-                <td>
-                    @if (!item.InvoicePaid) {
-                    <form asp-action="PayInvoice">
-                        <input type="hidden" name="Id" value="@item.Id" />
-                        <input type="submit" name="Pay" value="Set Paid" />
-                    </form>
-				    }
                 </td>
                 <td>
                     <div id="Buttons-@item.Id">
