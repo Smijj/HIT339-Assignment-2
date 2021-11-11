@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AssignmentOne_CYCC.Models
 {
@@ -45,14 +43,14 @@ namespace AssignmentOne_CYCC.Models
         // ========== Tutor Data ============
 
         [Display(Name = "First Name"), StringLength(200)]
-        public string fName { get; set; }
+        public string TutorFName { get; set; }
         [Display(Name = "Last Name"), StringLength(200)]
-        public string lName { get; set; }
-        public string fullName
+        public string TutorLName { get; set; }
+        public string TutorFullName
         {
             get
             {
-                return fName + " " + lName;
+                return TutorFName + " " + TutorLName;
             }
         }
         [EmailAddress]
@@ -69,49 +67,19 @@ namespace AssignmentOne_CYCC.Models
         // ========== Student Data ============
 
         [Display(Name = "First Name")]
-        public string FName { get; set; }
+        public string StudentFName { get; set; }
         [Display(Name = "Last Name")]
-        public string LName { get; set; }
-        public string FullName { get { return FName + " " + LName; } }
+        public string StudentLName { get; set; }
+        public string StudentFullName { get { return StudentFName + " " + StudentLName; } }
         [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true), Display(Name = "Date of Birth")]
         public DateTime DateOfBirth { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
         [Display(Name = "Parent/Guardian name")]
         public string GuardianName { get; set; }
-        [DataType(DataType.EmailAddress), Display(Name = "Gardian email address")]
+        [DataType(DataType.EmailAddress), Display(Name = "Guardian email address")]
         public string GuardianEmail { get; set; }
         [DataType(DataType.PhoneNumber)]
         public int GuardianPhoneNumber { get; set; }
-    }
-    public class LessonArchive
-    {
-        [Key]
-        public int Id;
-        public int InvoiceArchiveId { get; set; }
-        public InvoiceArchive InvoiceArchive { get; set; }
-        public int Year
-        {
-            get
-            {
-                return LessonTime.Year;
-            }
-        }
-        [Display(Name = "Lesson Date & Time")]
-        public DateTime LessonTime { get; set; }
-        public bool Paid { get; set; }
-
-        // ========== Duration Data ============
-        public int LessonDuration { get; set; }
-        [DataType(DataType.Currency), Display(Name = "Cost")]
-        public float cost { get; set; }
-
-        public string DurationCost
-        {
-            get
-            {
-                return LessonDuration + " min - $" + cost;
-            }
-        }
     }
 }

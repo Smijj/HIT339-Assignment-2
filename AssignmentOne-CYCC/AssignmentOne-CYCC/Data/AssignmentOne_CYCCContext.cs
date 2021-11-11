@@ -28,5 +28,9 @@ namespace AssignmentOne_CYCC.Data
         public DbSet<AssignmentOne_CYCC.Models.Invoice> Invoice { get; set; }
 
         public DbSet<AssignmentOne_CYCC.ViewModels.LessonViewModel> lessonViewModel { get; set; }
+
+        public DbSet<AssignmentOne_CYCC.Models.InvoiceArchive> InvoiceArchive { get; set; }
+
+        public DbSet<AssignmentOne_CYCC.Models.LessonArchive> LessonArchives { get; set; } 
     }
 }
