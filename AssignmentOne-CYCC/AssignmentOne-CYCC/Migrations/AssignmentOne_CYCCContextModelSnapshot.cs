@@ -16,8 +16,8 @@ namespace AssignmentOne_CYCC.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.9");
-                //.HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrtegy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "5.0.9")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("AssignmentOne_CYCC.Models.Duration", b =>
                 {
@@ -104,6 +104,81 @@ namespace AssignmentOne_CYCC.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("Invoice");
+                });
+
+            modelBuilder.Entity("AssignmentOne_CYCC.Models.InvoiceArchive", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AccountName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AccountNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BSB")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Bank")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuardianEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuardianName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("GuardianPhoneNumber")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("InvoicePaid")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("PaymentFinalDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReferenceNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Signature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentFName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentLName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Term")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("TermStartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<float>("TotalCost")
+                        .HasColumnType("real");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InvoiceArchive");
                 });
 
             modelBuilder.Entity("AssignmentOne_CYCC.Models.Lesson", b =>

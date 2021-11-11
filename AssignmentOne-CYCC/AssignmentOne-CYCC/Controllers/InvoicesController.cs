@@ -585,7 +585,7 @@ namespace AssignmentOne_CYCC.Controllers
             invoiceArchive.AccountName = invoice.AccountName;
             invoiceArchive.AccountNo = invoice.AccountNo;
             invoiceArchive.BSB = invoice.BSB;
-            invoiceArchive.Term = invoice.Term;
+            invoiceArchive.Term = (int)invoice.Term;
             invoiceArchive.Year = invoice.Year;
             invoiceArchive.TermStartDate = invoice.TermStartDate;
             invoiceArchive.PaymentFinalDate = invoice.PaymentFinalDate;
@@ -597,7 +597,7 @@ namespace AssignmentOne_CYCC.Controllers
             invoiceArchive.StudentLName = invoice.Student.LName;
             invoiceArchive.DateOfBirth = invoice.Student.DateOfBirth;
             invoiceArchive.Age = invoice.Student.Age;
-            invoiceArchive.Gender = invoice.Student.Gender;
+            invoiceArchive.Gender = invoice.Student.Gender.ToString();
             invoiceArchive.GuardianName = invoice.Student.GuardianName;
             invoiceArchive.GuardianEmail = invoice.Student.Email;
             invoiceArchive.GuardianPhoneNumber = invoice.Student.PhoneNumber;
