@@ -31,10 +31,6 @@ namespace AssignmentOne_CYCC.Models
 		public int? InvoiceId { get; set; }
 		public Invoice? Invoice { get; set; }
 
-<<<<<<< HEAD
-		[Display(Name = "Term"), RegularExpression("^[1-4]$", ErrorMessage = "Please enter a valid term number: 1,2,3,4")]
-        public int term { get; set; }
-=======
 		[Required, Display(Name = "Term")]
         public Terms term { get; set; }
         public int displayTerm
@@ -44,7 +40,6 @@ namespace AssignmentOne_CYCC.Models
                 return (int)term;
             }
         }
->>>>>>> TestingGeneralFeatures
 
         [Required, Display(Name = "Year")]
         public int year {
