@@ -1,25 +1,23 @@
 ﻿@model IEnumerable<AssignmentOne_CYCC.Models.Lesson>
 
 @{
+<<<<<<< HEAD
     ViewData["Title"] = "IndexTest";
+=======
+    ViewData["Title"] = "Lesson - Index";
+>>>>>>> VisualWork
 }
 @* NOTE: Code for Multi select is commented, retained for possible future use.*@
 
-<h1>Index</h1>
+<h1>Lessons</h1>
 
 <p>
+    <a asp-action="Create">Create New</a>
 </p>
 @using (Html.BeginForm(null, null, FormMethod.Get, new { id = "letter-form" })) {
 
     <table class="table">
         <thead>
-            <tr>
-                <td colspan="10">
-                    <a asp-action="Create">Create New</a>@* |
-                        <input type="button" name="get-latter" value="Generate Letter" id="get-letter-submit" />
-                        <p class="text-danger" id="get-letter-button-text-error"></p>*@
-                </td>
-            </tr>
             <tr>
                 @*<th>
                         <input type="checkbox" name="select_all" id="select_all" />

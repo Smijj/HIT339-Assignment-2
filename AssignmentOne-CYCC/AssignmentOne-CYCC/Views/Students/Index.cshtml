@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<AssignmentOne_CYCC.Models.Students>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Student - Index";
 }
 
-<h1>Index</h1>
+<h1>Students</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -28,9 +28,6 @@
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Gender)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.GuardianName)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Email)
@@ -59,9 +56,6 @@
                     </td>
                     <td data-href="/Students/Details/@item.Id">
                         @Html.DisplayFor(modelItem => item.Gender)
-                    </td>
-                    <td data-href="/Students/Details/@item.Id">
-                        @Html.DisplayFor(modelItem => item.GuardianName)
                     </td>
                     <td data-href="/Students/Details/@item.Id">
                         @Html.DisplayFor(modelItem => item.Email)
