@@ -54,7 +54,7 @@
                         <td>$@i.Duration.cost.ToString("0.000")</td>
                         <td>@i.Paid.ToString()</td>
 @*                      // Shows a button to either pay or un-pay a lesson.*@
-                        @if (i.Paid) {
+                        @*@if (i.Paid) {
                             <td>
                                 <form asp-action="PayLesson">
                                     <input type="hidden" name="Id" value="@i.Id" />
@@ -70,7 +70,7 @@
                                     <input type="submit" name="pay" value="pay" />
                                 </form>
                             </td>
-                        }
+                        }*@
 
                     </tr>
                         }
@@ -83,13 +83,13 @@
                         <form asp-action="PayInvoice">
                             <input type="hidden" name="Id" value="@Model.Id" />
                             <input type="hidden" name="Details" value="Details" />
-                            <input type="submit" name="pay" value="un-pay" />
+                            <input type="submit" name="pay" value="Un-Pay" />
                         </form>
                         } else {
                         <form asp-action="PayInvoice">
                             <input type="hidden" name="Id" value="@Model.Id" />
                             <input type="hidden" name="Details" value="Details" />
-                            <input type="submit" name="pay" value="pay" />
+                            <input type="submit" name="pay" value="Set Paid" />
                         </form>
 				        }
                     </td>

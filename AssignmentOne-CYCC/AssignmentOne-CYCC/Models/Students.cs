@@ -39,7 +39,7 @@ namespace AssignmentOne_CYCC.Models
         [Required]
 		public UserGender Gender { get; set; }
 
-		[Required, StringLength(200), Display(Name = "Parent/Guardian name")]
+		[Required, StringLength(200), Display(Name = "Parent/Guardian Name")]
 		public string GuardianName { get; set; }
 
 		[Required, DataType(DataType.EmailAddress), Display(Name = "Payment Contact Email Address")]

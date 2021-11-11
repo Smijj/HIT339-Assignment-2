@@ -19,6 +19,7 @@ namespace AssignmentOne_CYCC.Models
 
 		public ICollection<Lesson> Lesson { get; set; }
 
+        [Display(Name = "Reference Number")]
         public string ReferenceNo { 
             get
             {
@@ -61,12 +62,13 @@ namespace AssignmentOne_CYCC.Models
             }
         }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date), Display(Name = "Term Start Date")]
         public DateTime TermStartDate { get; set; }
 
         [DataType(DataType.Date), Display(Name = "Final Payment Date")]
         public DateTime PaymentFinalDate { get; set; }
 
+        [Display(Name = "Total Cost")]
         public float TotalCost {
             get
             {
