@@ -186,47 +186,6 @@ namespace AssignmentOne_CYCC.Controllers
             ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));      // Adding dropdown info
             return View(lessonViewModel);
         }
-        // ======= Retained for reference ======
-        // POST: Lessons/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        /* [HttpPost]
-         [ValidateAntiForgeryToken]
-         public async Task<IActionResult> Edit(int id, [Bind("Id,StudentId,InstrumentId,TutorId,DurationId,term,year,LessonTime,Paid")] Lesson lesson)
-         {
-             if (id != lesson.Id)
-             {
-                 return NotFound();
-             }
-
-             if (ModelState.IsValid)
-             {
-                 try
-                 {
-                     _context.Update(lesson);
-                     await _context.SaveChangesAsync();
-                 }
-                 catch (DbUpdateConcurrencyException)
-                 {
-                     if (!LessonExists(lesson.Id))
-                     {
-                         return NotFound();
-                     }
-                     else
-                     {
-                         throw;
-                     }
-                 }
-                 return RedirectToAction(nameof(Index));
-             }
-             ViewData["DurationId"] = new SelectList(_context.Duration, "Id", "DurationCost", lesson.DurationId);
-             ViewData["InstrumentId"] = new SelectList(_context.Instrument, "Id", "Name", lesson.InstrumentId);
-             ViewData["StudentId"] = new SelectList(_context.Students, "Id", "FullName", lesson.StudentId);
-             ViewData["TutorId"] = new SelectList(_context.Tutor, "Id", "fullName", lesson.TutorId);
-             return View(lesson);
-         }*/
-
-
 
         /// <summary>
         /// POST handler for Lesson->Edit page.

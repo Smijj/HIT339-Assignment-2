@@ -106,13 +106,6 @@ namespace AssignmentOne_CYCC.Controllers
 
             // Try to get Invoice of Id == id.
             IncludeInvoiceAndCostData(id);
-            /*var modelValue = _context.Invoice.Include(m => m.Student).Include(m => m.Lesson).Where(m => m.Id == id);
-
-			foreach (var m in modelValue) {
-				foreach (var l in m.Lesson) {
-					l.Duration = _context.Duration.Where(d => d.Id == l.DurationId).FirstOrDefault();
-				}
-			}*/
 
             // Include Students into invoice model instance.
             var invoice = await _context.Invoice
@@ -563,38 +556,6 @@ namespace AssignmentOne_CYCC.Controllers
                 paid = (pay ? "true" : "false")
             });
         }
-
-        /*       
-        /// <summary>
-        /// Modifies the Lesson.Paid variable for a single Lesson then returns the user back to the page they were on.
-        /// </summary>
-        /// <returns>ViewResult - Invoice->Details | Invoice->Index</returns>
-        public async Task<IActionResult> PayLesson() {
-            // Get variables from hidden form elements.
-            int id;
-            int invId;
-            bool pay = Request.Form["pay"] == "un-pay" ? false : true;
-            // Check if Id is valid.
-            if (int.TryParse(Request.Form["InvoiceId"], out invId)) {
-                // Get Invoice model instance of id.
-                if (int.TryParse(Request.Form["Id"], out id)) {
-                    // Get Invoice model instance of id.
-                    Lesson lesson = await _context.Lesson.FirstOrDefaultAsync(m => m.Id == id);
-                    // Set lesson.Paid to true.
-                    lesson.Paid = pay;
-                    _context.SaveChanges();
-                    // Redirect back to last page, with success message.
-                    return Redirect(nameof(Details) + "/" + invId + "?Success=Lesson Un-Paid successfully.");
-                } else {
-                    // Redirect back to last page, with error message.
-                    return Redirect(nameof(Details) + "/" + invId + "?error=Invalid Lesson Id.");
-                }
-            } else {
-                // Redirect back to last page, with error message.
-                return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
-            }
-        }
-        */
 
         /// <summary>
         /// Converts a given Invoice model to a InvoiceArchive model.

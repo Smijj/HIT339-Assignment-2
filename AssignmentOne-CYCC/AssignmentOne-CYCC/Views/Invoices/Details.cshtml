@@ -47,7 +47,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @*                  // Displays Lesson content only if there are lessons assigned, otherwise shows message.*@
+                    @*// Displays Lesson content only if there are lessons assigned, otherwise shows message.*@
                     @if (Model.Lesson != null && Model.Lesson.Count > 0) {
                         foreach (var i in Model.Lesson) {
                             <tr>
@@ -55,32 +55,13 @@
                                 <td data-href="/Lessons/Details/@i.Id">@i.Duration.LessonDuration min</td>
                                 <td data-href="/Lessons/Details/@i.Id">$@i.Duration.cost.ToString("0.000")</td>
                                 <td class="lesson-paid" data-href="/Lessons/Details/@i.Id">@i.Paid.ToString()</td>
-                                @*                      // Shows a button to either pay or un-pay a lesson.*@
-                                @*@if (i.Paid) {
-                                        <td>
-                                            <form asp-action="PayLesson">
-                                                <input type="hidden" name="Id" value="@i.Id" />
-                                                <input type="hidden" name="InvoiceId" value="@Model.Id" />
-                                                <input type="submit" name="pay" value="un-pay" />
-                                            </form>
-                                        </td>
-                                    } else {
-                                        <td>
-                                            <form asp-action="PayLesson">
-                                                <input type="hidden" name="Id" value="@i.Id" />
-                                                <input type="hidden" name="InvoiceId" value="@Model.Id" />
-                                                <input type="submit" name="pay" value="pay" />
-                                            </form>
-                                        </td>
-                                    }*@
-
                             </tr>
                         }
                         <tr>
                             <td colspan="2" style="text-align: right"><b>Total Cost </b></td>
                             <td>$@Model.TotalCost.ToString("0.000")</td>
                             <td colspan="2">
-                                @*                      // Shows button to either pay or un-pay a Invoice.*@
+                                @*// Shows button to either pay or un-pay a Invoice.*@
                                 @if (Model.InvoicePaid) {
                                 <button class="payToggle" href="#">un-Pay Invoice </button>
                                 } else {
