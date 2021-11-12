@@ -189,7 +189,7 @@
                         if (response.status != undefined && response.paid != undefined) {
                             if (response.status == "success") {
                                 $('td.lesson-paid').html(response.paid);
-                                button.text(response.paid == "true" ? "un-Pay Invoice" : "Pay Invoice");
+                                button.innerHTML = response.paid == "true" ? "un-Pay Invoice" : "Pay Invoice";
                             } else if (response.status == "error") {
                                 $('.error').html(response.msg);
                             }
