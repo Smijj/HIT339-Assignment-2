@@ -27,7 +27,7 @@ namespace AssignmentOne_CYCC.Controllers
         /// <returns>ViewResult - Lesson->Index</returns>
         public async Task<IActionResult> Index()
         {
-            var assignmentOne_CYCCContext = _context.Lesson.Include(l => l.Duration).Include(l => l.Instrument).Include(l => l.Students).Include(l => l.Tutor).Include(l => l.Invoice).ToList().Where(l => l.InvoiceId == null || (l.InvoiceId == null && l.Invoice.InvoicePaid == false));
+            var assignmentOne_CYCCContext = _context.Lesson.Include(l => l.Duration).Include(l => l.Instrument).Include(l => l.Students).Include(l => l.Tutor).Include(l => l.Invoice).ToList().Where(l => l.InvoiceId == null || (l.InvoiceId != null && l.Invoice.InvoicePaid == false));
             return View(assignmentOne_CYCCContext);
         }
 

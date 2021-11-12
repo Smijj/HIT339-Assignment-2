@@ -493,7 +493,7 @@ namespace AssignmentOne_CYCC.Controllers
         }
 
         /// <summary>
-        /// Modifies the Lesson.Paid variable for an entire Invoice then returns the user back to the page they were on.
+        /// Modifies the Lesson.Paid variable for an entire Invoice then returns json.
         /// </summary>
         /// <param name="id">Invoice Id to edit</param>
         /// <returns>ViewResult - Invoice->Details | Invoice->Index</returns>
