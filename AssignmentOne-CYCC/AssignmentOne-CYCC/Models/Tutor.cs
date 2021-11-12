@@ -23,6 +23,6 @@ namespace AssignmentOne_CYCC.Models
         [EmailAddress]
         public string Email { get; set; }
         [DataType(DataType.PhoneNumber), Display(Name = "Phone Number")]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

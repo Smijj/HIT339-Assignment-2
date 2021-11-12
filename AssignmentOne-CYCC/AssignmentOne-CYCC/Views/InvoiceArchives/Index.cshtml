@@ -6,6 +6,17 @@
 
 <h1>Invoice Archive</h1>
 
+
+@* Search Interface *@
+<form asp-action="Index" method="get">
+    Student Name: <input type="text" name="name" />
+    <input type="submit" value="Filter" />
+    @* Clears Search Filter *@
+    <input type="hidden" name="name" value="" />
+    <input type="submit" value="Clear Filter" />
+</form>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -39,7 +50,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.ReferenceNo)
                 </td>
-                
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Term)
                 </td>
