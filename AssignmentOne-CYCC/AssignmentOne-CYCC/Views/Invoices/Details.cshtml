@@ -51,10 +51,10 @@
                     @if (Model.Lesson != null && Model.Lesson.Count > 0) {
                         foreach (var i in Model.Lesson) {
                             <tr>
-                                <td>@i.LessonTime.ToString("dd/mm/yyyy")</td>
-                                <td>@i.Duration.LessonDuration min</td>
-                                <td>$@i.Duration.cost.ToString("0.000")</td>
-                                <td class="lesson-paid">@i.Paid.ToString()</td>
+                                <td data-href="/Lessons/Details/@i.Id">@i.LessonTime.ToString("dd/mm/yyyy")</td>
+                                <td data-href="/Lessons/Details/@i.Id">@i.Duration.LessonDuration min</td>
+                                <td data-href="/Lessons/Details/@i.Id">$@i.Duration.cost.ToString("0.000")</td>
+                                <td class="lesson-paid" data-href="/Lessons/Details/@i.Id">@i.Paid.ToString()</td>
                                 @*                      // Shows a button to either pay or un-pay a lesson.*@
                                 @*@if (i.Paid) {
                                         <td>
