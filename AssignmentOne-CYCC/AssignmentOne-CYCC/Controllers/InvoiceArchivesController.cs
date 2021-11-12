@@ -20,9 +20,18 @@ namespace AssignmentOne_CYCC.Controllers
         }
 
         // GET: InvoiceArchives
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string name)
         {
-            return View(await _context.InvoiceArchive.ToListAsync());
+            // Using a LINQ Query, select the lessons
+            var archivedInvoices = from l in _context.InvoiceArchive
+                          select l;
+
+            // If the search filter is not empty then alter the LINQ Query to only show the results containing the filter
+            if (!String.IsNullOrEmpty(name)) {
+                archivedInvoices = archivedInvoices.Where(l => (l.StudentFName + " " + l.StudentLName).Contains(name));
+            }
+
+            return View(await archivedInvoices.ToListAsync());
         }
 
         // GET: InvoiceArchives/Details/5

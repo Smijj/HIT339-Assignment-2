@@ -61,7 +61,7 @@ namespace AssignmentOne_CYCC.Migrations
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GuardianName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GuardianEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GuardianPhoneNumber = table.Column<int>(type: "int", nullable: false)
+                    GuardianPhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -81,7 +81,7 @@ namespace AssignmentOne_CYCC.Migrations
                     Gender = table.Column<int>(type: "int", nullable: false),
                     GuardianName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<int>(type: "int", nullable: false)
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -97,7 +97,7 @@ namespace AssignmentOne_CYCC.Migrations
                     fName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     lName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<int>(type: "int", nullable: false)
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

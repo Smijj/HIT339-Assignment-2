@@ -12,7 +12,7 @@
 </p>
 
 @* Search Interface *@
-<form asp-action="Index" method="get">
+<form asp-action="Index" method="get" class="search-form">
     Student Name: <input type="text" name="name" />
     <input type="submit" value="Filter" />
     @* Clears Search Filter *@
@@ -23,7 +23,7 @@
 
 @using (Html.BeginForm(null, null, FormMethod.Get, new { id = "letter-form" })) {
 
-    <table class="table">
+    <table class="table table-select">
         <thead>
             <tr>
                 @*<th>
@@ -87,8 +87,8 @@
                         @Html.DisplayFor(modelItem => item.Paid)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id"><img src="img/edit.png" alt="Edit" class="row-icon" /></a>
-                        <a asp-action="Delete" asp-route-id="@item.Id"><img src="img/del.png" alt="Delete" class="row-icon" /></a>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><img src="img/edit.png" alt="Edit" title="Edit" class="row-icon" /></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><img src="img/del.png" alt="Delete" title="Delete" class="row-icon" /></a>
                     </td>
                 </tr>
             }

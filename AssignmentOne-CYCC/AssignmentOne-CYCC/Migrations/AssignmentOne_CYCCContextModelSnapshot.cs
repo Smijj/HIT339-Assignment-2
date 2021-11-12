@@ -143,8 +143,8 @@ namespace AssignmentOne_CYCC.Migrations
                     b.Property<string>("GuardianName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("GuardianPhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("GuardianPhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("InvoicePaid")
                         .HasColumnType("bit");
@@ -262,8 +262,8 @@ namespace AssignmentOne_CYCC.Migrations
                         .HasMaxLength(400)
                         .HasColumnType("nvarchar(400)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -280,8 +280,8 @@ namespace AssignmentOne_CYCC.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("fName")
                         .HasMaxLength(200)
