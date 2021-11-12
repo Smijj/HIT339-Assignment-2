@@ -526,36 +526,45 @@ namespace AssignmentOne_CYCC.Controllers
         }
 
         /// <summary>
-        /// Modifies the Lesson.Paid variable for an entire Invoice then returns the user back to the page they were on.
+        /// Modifies the Lesson.Paid variable for an entire Invoice then returns json.
         /// </summary>
+        /// <param name="id">Invoice Id to edit</param>
         /// <returns>ViewResult - Invoice->Details | Invoice->Index</returns>
         [HttpPost]
-        public async Task<IActionResult> PayInvoice() {
-            // Get variables from hidden form elements.
-            int id;
-            bool pay = Request.Form["pay"] == "un-pay" ? false : true;
-            bool ToDetails = Request.Form["Details"] == "Details" ? true : false;
-            // Check if Id is valid.
-            if (int.TryParse(Request.Form["Id"], out id)) {
-                // Get Invoice model instance of id.
-                Invoice invoice = await _context.Invoice.Include(m => m.Lesson).FirstOrDefaultAsync(m => m.Id == id);
-                // Set each lesson.Paid to true.
-                foreach (var item in invoice.Lesson) {
-                    item.Paid = pay;
-                }
-                _context.SaveChanges();
-                // Redirect back to last page, with success message.
-                if (ToDetails)
-                    return Redirect(nameof(Details) + "/" + id + "?Success=Invoice " + (pay ? "" : "un-") + "Paid successfully.");
-                return RedirectToAction(nameof(Index), new { Success = "Invoice Paid successfully." });
-            } else {
-                // Redirect back to last page, with error message.
-                if (ToDetails)
-                    return Redirect(nameof(Details) + "/" + id + "?error=Invalid Invoice Id.");
-                return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
+        public async Task<IActionResult> PayInvoice(int id)
+        {
+
+            // Get Invoice model instance of id.
+            Invoice invoice;
+            try
+            {
+                invoice = await _context.Invoice.Include(m => m.Lesson).FirstAsync(m => m.Id == id);
             }
+            catch (Exception)
+            {
+                return Json(new
+                {
+                    status = "error",
+                    msg = "PIaj 001: An Internal Error Occurred and your request could not be completed. Please contact your administrator if the error continues to occur."
+                });
+            }
+
+            bool pay = !invoice.InvoicePaid;
+            // Set each lesson.Paid to true.
+            foreach (var item in invoice.Lesson)
+            {
+                item.Paid = pay;
+            }
+            _context.SaveChanges();
+            // Redirect back to last page, with success message.
+            return Json(new
+            {
+                status = "success",
+                paid = (pay ? "true" : "false")
+            });
         }
 
+        /*       
         /// <summary>
         /// Modifies the Lesson.Paid variable for a single Lesson then returns the user back to the page they were on.
         /// </summary>
@@ -585,6 +594,7 @@ namespace AssignmentOne_CYCC.Controllers
                 return RedirectToAction(nameof(Index), new { error = "Invalid Invoice Id." });
             }
         }
+        */
 
         /// <summary>
         /// Converts a given Invoice model to a InvoiceArchive model.
