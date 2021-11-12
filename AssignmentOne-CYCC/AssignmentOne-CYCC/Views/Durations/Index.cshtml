@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-select">
     <thead>
         <tr>
             <th>
@@ -31,8 +31,8 @@
                     @Html.DisplayFor(modelItem => item.cost)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id"><img src="img/edit.png" alt="Edit" class="row-icon" /></a>
-                    <a asp-action="Delete" asp-route-id="@item.Id"><img src="img/del.png" alt="Delete" class="row-icon" /></a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><img src="img/edit.png" alt="Edit" title="Edit" class="row-icon" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><img src="img/del.png" alt="Delete" title="Delete" class="row-icon" /></a>
                 </td>
             </tr>
         }

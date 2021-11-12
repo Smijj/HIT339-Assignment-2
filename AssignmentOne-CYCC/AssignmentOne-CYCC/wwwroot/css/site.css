@@ -1,11 +1,22 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
+:root {
+    --Bg: #ffffff;
+    --BgAlt: #f2f7f8;
+    --Logo: #260d45;
+    --Highlight: #1b7887;
+    --Text-Colour: #000000;
+    --Text-Hover: #186371;
+    --Button-Hover: #e7f3f5;
+}
+
+
+/*a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-}
+}*/
 
 /* Provide sufficient contrast against white background */
 a {
@@ -27,12 +38,8 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+  font-size: 16px;
+  color: var(--Text-Colour);
 }
 
 .border-top {
@@ -68,16 +75,68 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+
+  background-color: var(--Logo);
 }
 
 /* =============== CUSTOM =============== */
+
+/* Genreal Styles*/
+.logo {
+    height: 9rem;
+    padding-right: 5rem;
+    padding-right: 5rem;
+}
+
+.navbar {
+    padding: 0.5rem 1rem 0 1rem;
+    border-bottom: solid 20px var(--Highlight);
+}
+
+.navbar-nav {
+    font-size: 1.2rem;
+}
+
+.nav-item {
+    /*    margin: 10px;*/
+    border-bottom: solid 2px transparent;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-item:hover {
+    background-color: var(--Button-Hover);
+    border-bottom: solid 2px var(--Highlight);
+}
+
+.home {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 2rem;
+}
+
+.search-form {
+    margin-bottom: 10px;
+}
+
+#home-image {
+    width:max-content;
+}
+
+
 /* Table Styles
 ---------------tr[data-href]:hover,----------------------------------- */
-tbody tr:hover {
+.table-select tbody tr:hover {
     background-color: lightgray;
 }
-tbody tr:hover [data-href] {
-    cursor: pointer;
+.table-select tbody tr:hover [data-href] {
+        cursor: pointer;
 }
 table td img.row-icon {
     width: 20px;
@@ -126,4 +185,19 @@ div.loadingGifContainer {
     transition-property: display;
     transition-duration: 0.5s;
     transition-timing-function: ease-in;
+}
+
+
+
+
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
 }

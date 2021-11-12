@@ -47,7 +47,5 @@ namespace AssignmentOne_CYCC.Models
 
 		[DataType(DataType.PhoneNumber), Display(Name = "Phone Number")]
 		public string PhoneNumber { get; set; }
-
-		// Link to lesson
 	}
 }
