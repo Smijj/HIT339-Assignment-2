@@ -207,6 +207,9 @@ namespace AssignmentOne_CYCC.Controllers
         public async Task<IActionResult> Create([Bind("StudentId,Comment,Signature,Bank,AccountName,AccountNo,BSB,Term,Year,TermStartDate,PaymentFinalDate")] Invoice invoice)
         {
             if (ModelState.IsValid) {
+
+                ViewData["Terms"] = new SelectList(Enum.GetValues(typeof(Terms)));
+
                 // Check if any data is provided, else redirect back to form page.
                 if (invoice == null) return RedirectToAction(nameof(Create));
 
@@ -216,7 +219,7 @@ namespace AssignmentOne_CYCC.Controllers
                     // Get all lessons linked to this Student that: Have NOT been paid AND are NOT already associated with another Invoice.
                     IEnumerable<Lesson> lessonQuery =
                         from lesson in _context.Lesson
-                        where lesson.StudentId == invoice.StudentId && lesson.Paid == false && lesson.InvoiceId == null
+                        where lesson.StudentId == invoice.StudentId && lesson.Paid == false
                         select lesson;
 
                     // Check if there is no lessons unpaid, not already linked, if there is none return error.
